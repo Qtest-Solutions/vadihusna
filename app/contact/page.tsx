@@ -1,28 +1,32 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
+import { useState } from "react";
+import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
-    alert('Thank you for your inquiry! We will get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    alert("Thank you for your inquiry! We will get back to you soon.");
+    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -33,8 +37,8 @@ export default function ContactPage() {
         <div className="container-max text-center">
           <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
           <p className="text-xl max-w-3xl mx-auto">
-            Get in touch with us for admissions, inquiries, or to schedule a campus visit. 
-            We're here to help you join our school family.
+            Get in touch with us for admissions, inquiries, or to schedule a
+            campus visit. We're here to help you join our school family.
           </p>
         </div>
       </section>
@@ -44,8 +48,10 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Get in Touch</h2>
-              
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">
+                Get in Touch
+              </h2>
+
               <div className="space-y-8">
                 {/* Address */}
                 <div className="flex items-start space-x-4">
@@ -53,9 +59,12 @@ export default function ContactPage() {
                     <MapPin className="text-blue-600" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Address</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      Address
+                    </h3>
                     <p className="text-gray-600">
-                      Elettil P.O., Koduvally Road<br />
+                      Elettil P.O., Koduvally Road
+                      <br />
                       Kozhikode, Kerala - 673572
                     </p>
                   </div>
@@ -67,7 +76,9 @@ export default function ContactPage() {
                     <Phone className="text-green-600" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone Numbers</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      Phone Numbers
+                    </h3>
                     <div className="space-y-1 text-gray-600">
                       <p>+91-9946100154</p>
                       <p>+91-9539777154</p>
@@ -82,7 +93,9 @@ export default function ContactPage() {
                     <Mail className="text-purple-600" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      Email
+                    </h3>
                     <div className="space-y-1 text-gray-600">
                       <p>vhpseduc@gmail.com</p>
                       <p>vadihusna@yahoo.co.in</p>
@@ -96,7 +109,9 @@ export default function ContactPage() {
                     <Clock className="text-orange-600" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Office Hours</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      Office Hours
+                    </h3>
                     <div className="space-y-1 text-gray-600">
                       <p>Monday - Friday: 8:00 AM - 4:00 PM</p>
                       <p>Saturday: 8:00 AM - 1:00 PM</p>
@@ -110,12 +125,17 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div>
               <div className="bg-white rounded-xl shadow-lg p-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-8">Send us a Message</h2>
-                
+                <h2 className="text-3xl font-bold text-gray-900 mb-8">
+                  Send us a Message
+                </h2>
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
                         Full Name *
                       </label>
                       <input
@@ -129,9 +149,12 @@ export default function ContactPage() {
                         placeholder="Your full name"
                       />
                     </div>
-                    
+
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
                         Email Address *
                       </label>
                       <input
@@ -149,7 +172,10 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
                         Phone Number
                       </label>
                       <input
@@ -162,9 +188,12 @@ export default function ContactPage() {
                         placeholder="+91 9876543210"
                       />
                     </div>
-                    
+
                     <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label
+                        htmlFor="subject"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
                         Subject *
                       </label>
                       <select
@@ -187,7 +216,10 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Message *
                     </label>
                     <textarea
@@ -219,17 +251,32 @@ export default function ContactPage() {
       {/* Map Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-max">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Find Us</h2>
-          
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+            Find Us
+          </h2>
+
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="aspect-video bg-gray-200 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin size={48} className="text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-600">
-                  Interactive map would be embedded here<br />
-                  Elettil P.O., Koduvally Road, Kozhikode, Kerala
-                </p>
-              </div>
+            <div className="aspect-video">
+              <iframe
+                title="Vadi Husna Public School Location"
+                src="https://www.google.com/maps?q=11.391482,75.882768&z=12&t=m&output=embed&hl=en"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+            <div className="px-6 py-4 border-t text-sm text-gray-600">
+              <a
+                href="https://www.google.com/maps?ll=11.391482,75.882768&z=12&t=m&hl=en-US&gl=US&mapclient=embed&cid=11477052646423042879"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                Open in Google Maps
+              </a>
             </div>
           </div>
         </div>

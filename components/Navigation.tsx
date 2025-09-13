@@ -1,22 +1,20 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAcademicsOpen, setIsAcademicsOpen] = useState(false);
+  // Prevent hover-triggered state during hydration
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
-  const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About Us' },
-    { href: '/academics', label: 'Academics' },
-    { href: '/facilities', label: 'Facilities' },
-    { href: '/admissions', label: 'Admissions' },
-    { href: '/student-life', label: 'Student Life' },
-    { href: '/gallery', label: 'Gallery' },
-    { href: '/reviews', label: 'Reviews' },
-    { href: '/contact', label: 'Contact' },
+  const academicsDropdown = [
+    { href: "/academics/curriculum", label: "Curriculum" },
+    { href: "/academics/faculty", label: "Faculty" },
+    { href: "/academics/achievements", label: "Achievements" },
   ];
 
   return (
@@ -43,31 +41,97 @@ export default function Navigation() {
       {/* Main Navigation */}
       <nav className="bg-white shadow-lg sticky top-0 z-50">
         <div className="container-max">
-          <div className="flex justify-between items-center py-4">
+          <div className="flex justify-between items-center py-4 ml-3">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">V</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">VADI HUSNA</h1>
-                <p className="text-sm text-blue-600">PUBLIC SCHOOL</p>
-              </div>
+              <img
+                src="/vadihusnaLogo.png"
+                alt="School Logo"
+                className="rounded-xl w-full h-14 object-cover shadow-lg"
+              />
             </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Link href="/admissions" className="btn-primary">
-                Apply Now
+              {/* Home */}
+              <Link
+                href="/"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              >
+                Home
+              </Link>
+
+              {/* About Us */}
+              <Link
+                href="/about"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              >
+                About Us
+              </Link>
+
+              {/* Academics Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => mounted && setIsAcademicsOpen(true)}
+                onMouseLeave={() => mounted && setIsAcademicsOpen(false)}
+              >
+                <button className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 flex items-center gap-1">
+                  Academics
+                  <ChevronDown
+                    size={16}
+                    className={`transition-transform duration-200 ${
+                      isAcademicsOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {isAcademicsOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg border z-50">
+                    <div className="py-2">
+                      {academicsDropdown.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Our Campus */}
+              <Link
+                href="/campus"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              >
+                Our Campus
+              </Link>
+
+              {/* News */}
+              <Link
+                href="/news"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              >
+                News
+              </Link>
+
+              {/* Mandatory Disclosure */}
+              <Link
+                href="/mandatory-disclosure"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              >
+                Mandatory Disclosure
+              </Link>
+
+              {/* Contact Us */}
+              <Link
+                href="/contact"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              >
+                Contact Us
               </Link>
             </div>
 
@@ -84,18 +148,92 @@ export default function Navigation() {
           {isOpen && (
             <div className="lg:hidden py-4 border-t">
               <div className="flex flex-col space-y-4">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-gray-700 hover:text-blue-600 font-medium py-2"
-                    onClick={() => setIsOpen(false)}
+                {/* Home */}
+                <Link
+                  href="/"
+                  className="text-gray-700 hover:text-blue-600 font-medium py-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Home
+                </Link>
+
+                {/* About Us */}
+                <Link
+                  href="/about"
+                  className="text-gray-700 hover:text-blue-600 font-medium py-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  About Us
+                </Link>
+
+                {/* Mobile Academics Dropdown */}
+                <div>
+                  <button
+                    onClick={() => setIsAcademicsOpen(!isAcademicsOpen)}
+                    className="text-gray-700 hover:text-blue-600 font-medium py-2 flex items-center gap-1 w-full"
                   >
-                    {link.label}
-                  </Link>
-                ))}
-                <Link href="/admissions" className="btn-primary w-full text-center">
-                  Apply Now
+                    Academics
+                    <ChevronDown
+                      size={16}
+                      className={`transition-transform duration-200 ${
+                        isAcademicsOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {isAcademicsOpen && (
+                    <div className="pl-4 space-y-2 mt-2">
+                      {academicsDropdown.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="block text-gray-600 hover:text-blue-600 py-1 text-sm"
+                          onClick={() => {
+                            setIsOpen(false);
+                            setIsAcademicsOpen(false);
+                          }}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Our Campus */}
+                <Link
+                  href="/campus"
+                  className="text-gray-700 hover:text-blue-600 font-medium py-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Our Campus
+                </Link>
+
+                {/* News */}
+                <Link
+                  href="/news"
+                  className="text-gray-700 hover:text-blue-600 font-medium py-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  News
+                </Link>
+
+                {/* Mandatory Disclosure */}
+                <Link
+                  href="/mandatory-disclosure"
+                  className="text-gray-700 hover:text-blue-600 font-medium py-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Mandatory Disclosure
+                </Link>
+
+                {/* Contact Us */}
+                <Link
+                  href="/contact"
+                  className="text-gray-700 hover:text-blue-600 font-medium py-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Contact Us
                 </Link>
               </div>
             </div>

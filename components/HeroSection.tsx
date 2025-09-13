@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { GraduationCap, Users, Award, BookOpen } from 'lucide-react';
+import Link from "next/link";
+import { GraduationCap, Users, Award, BookOpen } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -14,11 +14,12 @@ export default function HeroSection() {
                 <span className="block text-yellow-300">Education</span>
               </h1>
               <p className="text-xl text-blue-100 mb-6 leading-relaxed">
-                Nurturing young minds since 1996 with quality CBSE education, 
-                holistic development, and strong moral values in the heart of Kozhikode, Kerala.
+                Nurturing young minds since 1996 with quality CBSE education,
+                holistic development, and strong moral values in the heart of
+                Kozhikode, Kerala.
               </p>
             </div>
-            
+
             {/* Key Features */}
             <div className="grid grid-cols-2 gap-4 mb-8">
               <div className="flex items-center space-x-3">
@@ -41,10 +42,16 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/admissions" className="btn-secondary bg-white text-blue-600 hover:bg-gray-50">
+              <Link
+                href="/admissions"
+                className="btn-secondary bg-white text-blue-600 hover:bg-gray-50"
+              >
                 Apply for Admission
               </Link>
-              <Link href="/about" className="btn-secondary border-white text-white hover:bg-white hover:text-blue-600">
+              <Link
+                href="/about"
+                className="btn-secondary border-white text-white hover:bg-white hover:text-blue-600"
+              >
                 Learn More
               </Link>
             </div>
@@ -54,17 +61,17 @@ export default function HeroSection() {
           <div className="relative">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
               <img
-                src="https://images.pexels.com/photos/5088017/pexels-photo-5088017.jpeg"
+                src="/vadihusna1.png"
                 alt="Students in classroom"
-                className="rounded-xl w-full h-96 object-cover shadow-2xl"
+                className="rounded-xl w-full h-55 object-cover shadow-2xl"
               />
-              
+
               {/* Floating Cards */}
               <div className="absolute -top-4 -left-4 bg-white text-gray-900 p-4 rounded-lg shadow-xl">
                 <div className="text-2xl font-bold text-blue-600">513+</div>
                 <div className="text-sm">Students</div>
               </div>
-              
+
               <div className="absolute -bottom-4 -right-4 bg-white text-gray-900 p-4 rounded-lg shadow-xl">
                 <div className="text-2xl font-bold text-green-600">23:1</div>
                 <div className="text-sm">Teacher Ratio</div>

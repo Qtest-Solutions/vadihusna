@@ -1,5 +1,12 @@
-import Link from 'next/link';
-import { Phone, Mail, MapPin, Facebook, Twitter, Instagram } from 'lucide-react';
+import Link from "next/link";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+} from "lucide-react";
 
 export default function Footer() {
   return (
@@ -8,47 +15,76 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* School Info */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold">V</span>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold">VADI HUSNA</h3>
-                <p className="text-sm text-gray-300">PUBLIC SCHOOL</p>
-              </div>
-            </div>
+            <Link href="/" className="flex items-center space-x-3">
+              <img
+                src="/vadihusnaLogo.png"
+                alt="School Logo"
+                className="rounded-xl w-[80%] h-13 object-cover shadow-lg mb-5"
+              />
+            </Link>
             <p className="text-gray-300 mb-4">
-              Excellence through Education - Providing quality CBSE education since 1996
+              Excellence through Education - Providing quality CBSE education
+              since 1996
             </p>
             <div className="flex space-x-4">
-              <Facebook size={20} className="text-gray-400 hover:text-blue-400 cursor-pointer" />
-              <Twitter size={20} className="text-gray-400 hover:text-blue-400 cursor-pointer" />
-              <Instagram size={20} className="text-gray-400 hover:text-blue-400 cursor-pointer" />
+              <Facebook
+                size={20}
+                className="text-gray-400 hover:text-blue-400 cursor-pointer"
+              />
+              <Twitter
+                size={20}
+                className="text-gray-400 hover:text-blue-400 cursor-pointer"
+              />
+              <Instagram
+                size={20}
+                className="text-gray-400 hover:text-blue-400 cursor-pointer"
+              />
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4">Explore</h4>
             <ul className="space-y-2">
-              <li><Link href="/about" className="text-gray-300 hover:text-white">About Us</Link></li>
-              <li><Link href="/academics" className="text-gray-300 hover:text-white">Academics</Link></li>
-              <li><Link href="/admissions" className="text-gray-300 hover:text-white">Admissions</Link></li>
-              <li><Link href="/facilities" className="text-gray-300 hover:text-white">Facilities</Link></li>
-              <li><Link href="/student-life" className="text-gray-300 hover:text-white">Student Life</Link></li>
-              <li><Link href="/mandatory-disclosure" className="text-gray-300 hover:text-white">Mandatory Disclosure</Link></li>
-            </ul>
-          </div>
-
-          {/* Academics */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Academics</h4>
-            <ul className="space-y-2 text-gray-300">
-              <li>Classes: LKG - XII</li>
-              <li>CBSE Curriculum</li>
-              <li>English Medium</li>
-              <li>Streams: PCM & PCB</li>
-              <li>Student-Teacher Ratio: 23:1</li>
+              <li>
+                <Link href="/" className="text-gray-300 hover:text-white">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-gray-300 hover:text-white">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/academics"
+                  className="text-gray-300 hover:text-white"
+                >
+                  Academics
+                </Link>
+              </li>
+              <li>
+                <Link href="/news" className="text-gray-300 hover:text-white">
+                  News
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/mandatory-disclosure"
+                  className="text-gray-300 hover:text-white"
+                >
+                  Mandatory Disclosure
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-gray-300 hover:text-white"
+                >
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -57,38 +93,67 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <MapPin size={18} className="text-blue-400 mt-1 flex-shrink-0" />
+                <MapPin
+                  size={18}
+                  className="text-blue-400 mt-1 flex-shrink-0"
+                />
                 <p className="text-gray-300">
-                  Elettil P.O., Koduvally Road<br />
-                  Kozhikode, Kerala - 673572
+                  Vadi Husna Public School
+                  <br />
+                  Elettil P.O, Koduvally
                 </p>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={18} className="text-blue-400" />
                 <div>
-                  <p className="text-gray-300">+91-9946100154</p>
-                  <p className="text-gray-300">0495-2200154</p>
+                  <p className="text-gray-300">+919946100154</p>
+                  <p className="text-gray-300">+919539777154</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="text-blue-400" />
-                <p className="text-gray-300">vhpseduc@gmail.com</p>
+                <div>
+                  <p className="text-gray-300">vhpseduc@gmail.com</p>
+                  <p className="text-gray-300">vadihusna@yahoo.co.in</p>
+                </div>
               </div>
             </div>
+          </div>
+
+          {/* Location */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Location</h4>
+            <div className="rounded-lg overflow-hidden ring-1 ring-gray-800 bg-gray-800">
+              <iframe
+                title="School Location Map"
+                src="https://www.google.com/maps?q=11.391482,75.882768&z=12&t=m&output=embed&hl=en"
+                className="w-full h-48"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+            <p className="text-gray-400 text-sm mt-2">
+              Vadi Husna Public School, Elettil P.O, Koduvally
+            </p>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-800 py-6">
-        <div className="container-max flex flex-col sm:flex-row justify-between items-center">
+        <div className="container-max flex flex-col sm:flex-row justify-center items-center">
           <p className="text-gray-400 text-sm">
             © 2024 Vadi Husna Public School. All rights reserved.
           </p>
-          <div className="flex space-x-4 text-sm text-gray-400 mt-2 sm:mt-0">
-            <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white">Terms of Service</Link>
-          </div>
+          {/* <div className="flex space-x-4 text-sm text-gray-400 mt-2 sm:mt-0">
+            <Link href="/privacy" className="hover:text-white">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-white">
+              Terms of Service
+            </Link>
+          </div> */}
         </div>
       </div>
     </footer>
