@@ -15,40 +15,14 @@ export default function CallToAction() {
           here to help.
         </p>
 
-        <div className="grid grid-cols-1 place-items-center gap-6">
-          {/* <Link href="/admissions" className="bg-white text-blue-600 p-6 rounded-xl shadow-lg card-hover group">
-            <div className="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4">
-              <ArrowRight className="text-blue-600 group-hover:translate-x-1 transition-transform" size={24} />
-            </div>
-            <h3 className="text-lg font-semibold mb-2">Apply Now</h3>
-            <p className="text-gray-600 text-sm">Start your admission process today</p>
-          </Link> */}
-
-          {/* <a 
-            href="#" 
-            className="bg-white text-blue-600 p-6 rounded-xl shadow-lg card-hover group"
-            onClick={(e) => e.preventDefault()}
-          >
-            <div className="flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mx-auto mb-4">
-              <Download className="text-green-600" size={24} />
-            </div>
-            <h3 className="text-lg font-semibold mb-2">Download Brochure</h3>
-            <p className="text-gray-600 text-sm">Get detailed information</p>
-          </a> */}
-
-          <Link
-            href="/contact"
-            className="bg-white text-blue-600 p-6 rounded-xl shadow-lg card-hover group w-full max-w-sm"
-          >
-            <div className="flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mx-auto mb-4">
-              <Phone className="text-green-600" size={24} />
-            </div>
-            <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
-            <p className="text-gray-600 text-sm">
-              Get in touch for any inquiries
-            </p>
-          </Link>
-        </div>
+        {/* CTA Button */}
+        <Link
+          href="/contact"
+          className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 font-semibold text-lg py-3 px-8 rounded-full shadow-lg hover:bg-blue-50 hover:shadow-xl transition-transform duration-200 hover:-translate-y-0.5"
+        >
+          <Phone className="text-green-600" size={22} />
+          Contact Us
+        </Link>
       </div>
     </section>
   );

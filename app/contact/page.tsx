@@ -158,24 +158,20 @@ export default function ContactPage() {
                     <h3 className="font-semibold text-sm text-gray-900 mb-1">
                       Call Us
                     </h3>
-                    <div className="space-y-0.5 text-xs text-gray-600">
+                    <div className="flex-col space-y-0.5 text-xs text-gray-600">
                       <a
                         href="tel:+919946100154"
                         className="hover:text-green-600"
                       >
                         +91-9946100154
                       </a>
+                    </div>
+                    <div className="flex-col space-y-0.5 text-xs text-gray-600">
                       <a
                         href="tel:+919539777154"
                         className="hover:text-green-600"
                       >
                         +91-9539777154
-                      </a>
-                      <a
-                        href="tel:04952200154"
-                        className="hover:text-green-600"
-                      >
-                        0495-2200154
                       </a>
                     </div>
                   </div>
@@ -277,11 +273,9 @@ export default function ContactPage() {
                         required
                         className="w-full px-3 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 text-sm"
                       >
-                        <option value="">Choose subject</option>
                         <option value="Admission Inquiry">
                           Admission Inquiry
                         </option>
-                        <option value="Campus Visit">Campus Visit</option>
                         <option value="Academic Info">Academic Info</option>
                         <option value="Facilities">Facilities</option>
                         <option value="Transport">Transport</option>

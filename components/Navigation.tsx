@@ -23,11 +23,11 @@ export default function Navigation() {
     <>
       {/* Top Bar */}
       <div className="bg-blue-900 text-white py-2 px-4 text-sm">
-        <div className="container-max flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div className="container-max px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <Phone size={16} />
-              <span>+91-9946100154</span>
+              <span>+919946100154 | +919539777154 </span>
             </div>
             <div className="flex items-center gap-2">
               <Mail size={16} />
@@ -42,14 +42,14 @@ export default function Navigation() {
 
       {/* Main Navigation */}
       <nav className="bg-white shadow-lg sticky top-0 z-50">
-        <div className="container-max">
-          <div className="flex justify-between items-center py-4 ml-3">
+        <div className="container-max px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3">
               <img
                 src={logoUrl}
                 alt="School Logo"
-                className="rounded-xl w-full h-14 object-cover shadow-lg"
+                className="h-12 sm:h-16 object-cover"
               />
             </Link>
 
@@ -89,7 +89,7 @@ export default function Navigation() {
 
                 {isAcademicsOpen && (
                   <div
-                    className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg border z-50"
+                    className="absolute top-full left-0 w-48 bg-white rounded-md shadow-lg border z-50"
                     onMouseEnter={() => mounted && setIsAcademicsOpen(true)}
                     onMouseLeave={() => mounted && setIsAcademicsOpen(false)}
                   >
@@ -153,11 +153,11 @@ export default function Navigation() {
           {/* Mobile Navigation */}
           {isOpen && (
             <div className="lg:hidden py-4 border-t">
-              <div className="flex flex-col space-y-4">
+              <div className="flex flex-col space-y-4 px-2">
                 {/* Home */}
                 <Link
                   href="/"
-                  className="text-gray-700 hover:text-blue-600 font-medium py-2"
+                  className="text-gray-700 hover:text-blue-600 font-medium py-2 px-2 rounded-md hover:bg-gray-50 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Home
@@ -166,7 +166,7 @@ export default function Navigation() {
                 {/* About Us */}
                 <Link
                   href="/about"
-                  className="text-gray-700 hover:text-blue-600 font-medium py-2"
+                  className="text-gray-700 hover:text-blue-600 font-medium py-2 px-2 rounded-md hover:bg-gray-50 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   About Us
@@ -176,7 +176,7 @@ export default function Navigation() {
                 <div>
                   <button
                     onClick={() => setIsAcademicsOpen(!isAcademicsOpen)}
-                    className="text-gray-700 hover:text-blue-600 font-medium py-2 flex items-center gap-1 w-full"
+                    className="text-gray-700 hover:text-blue-600 font-medium py-2 px-2 flex items-center gap-1 w-full rounded-md hover:bg-gray-50 transition-colors"
                   >
                     Academics
                     <ChevronDown
@@ -188,12 +188,12 @@ export default function Navigation() {
                   </button>
 
                   {isAcademicsOpen && (
-                    <div className="pl-4 space-y-2 mt-2">
+                    <div className="pl-6 space-y-2 mt-2">
                       {academicsDropdown.map((item) => (
                         <Link
                           key={item.href}
                           href={item.href}
-                          className="block text-gray-600 hover:text-blue-600 py-1 text-sm"
+                          className="block text-gray-600 hover:text-blue-600 py-2 px-2 text-sm rounded-md hover:bg-gray-50 transition-colors"
                           onClick={() => {
                             setIsOpen(false);
                             setIsAcademicsOpen(false);
@@ -209,7 +209,7 @@ export default function Navigation() {
                 {/* Our Campus */}
                 <Link
                   href="/campus"
-                  className="text-gray-700 hover:text-blue-600 font-medium py-2"
+                  className="text-gray-700 hover:text-blue-600 font-medium py-2 px-2 rounded-md hover:bg-gray-50 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Our Campus
@@ -218,7 +218,7 @@ export default function Navigation() {
                 {/* News */}
                 <Link
                   href="/news"
-                  className="text-gray-700 hover:text-blue-600 font-medium py-2"
+                  className="text-gray-700 hover:text-blue-600 font-medium py-2 px-2 rounded-md hover:bg-gray-50 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   News
@@ -227,7 +227,7 @@ export default function Navigation() {
                 {/* Mandatory Disclosure */}
                 <Link
                   href="/mandatory-disclosure"
-                  className="text-gray-700 hover:text-blue-600 font-medium py-2"
+                  className="text-gray-700 hover:text-blue-600 font-medium py-2 px-2 rounded-md hover:bg-gray-50 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Mandatory Disclosure
@@ -236,7 +236,7 @@ export default function Navigation() {
                 {/* Contact Us */}
                 <Link
                   href="/contact"
-                  className="text-gray-700 hover:text-blue-600 font-medium py-2"
+                  className="text-gray-700 hover:text-blue-600 font-medium py-2 px-2 rounded-md hover:bg-gray-50 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Contact Us
