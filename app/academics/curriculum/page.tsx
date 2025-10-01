@@ -1,117 +1,89 @@
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Curriculum - Vadi Husna Public School",
-  description:
-    "Learn about our comprehensive CBSE curriculum and academic programs.",
-};
-
 export default function CurriculumPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">
-            Curriculum
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <div className="container mx-auto px-6 py-20">
+        <div className="max-w-5xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
+            Curriculum & Groups Offered
           </h1>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
+            At Vadi Husna Public School, we provide a balanced curriculum that
+            blends
+            <span className="font-semibold text-blue-600">
+              {" "}
+              CBSE standards
+            </span>{" "}
+            with holistic development opportunities. We also offer
+            <span className="font-semibold text-green-600">
+              {" "}
+              Islamic education
+            </span>
+            via a recognized Madrassa under Samastha (SKIMVB).
+          </p>
+        </div>
 
-          <div className="prose max-w-none">
-            <p className="text-lg text-gray-600 mb-12 text-center">
-              Our comprehensive CBSE curriculum is designed to foster academic
-              excellence and holistic development.
+        {/* Curriculum by Levels */}
+        <div className="grid md:grid-cols-3 gap-8 mb-20">
+          {/* Pre-Primary */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition duration-300 border-t-4 border-pink-400">
+            <div className="text-4xl mb-4">🌟</div>
+            <h3 className="text-xl font-semibold mb-3">Pre-Primary – III</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Montessori-based education emphasizing Practical Life skills,
+              Sensorial Training, Language, Mathematics, and Cultural learning.
             </p>
+          </div>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Primary Section (LKG - V)
-                </h2>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• Foundation in English, Hindi, and Malayalam</li>
-                  <li>• Mathematics fundamentals</li>
-                  <li>• Environmental Studies</li>
-                  <li>• Art and Craft activities</li>
-                  <li>• Physical Education and Games</li>
-                  <li>• Moral Science and Values</li>
-                </ul>
-              </div>
+          {/* Class IV – X */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition duration-300 border-t-4 border-green-400">
+            <div className="text-4xl mb-4">📚</div>
+            <h3 className="text-xl font-semibold mb-3">Classes IV – X</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Comprehensive curriculum including Languages, Mathematics,
+              Science, Social Science, Computer Studies, Arts & Craft, Physical
+              Education, and Life Skills.
+            </p>
+          </div>
 
-              <div className="bg-green-50 p-6 rounded-lg">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Secondary Section (VI - X)
-                </h2>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• Core subjects: English, Hindi, Mathematics</li>
-                  <li>• Science (Physics, Chemistry, Biology)</li>
-                  <li>• Social Science</li>
-                  <li>• Optional third language</li>
-                  <li>• Computer Science</li>
-                  <li>• Work Experience and Life Skills</li>
-                </ul>
+          {/* Class XI & XII */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition duration-300 border-t-4 border-yellow-400">
+            <div className="text-4xl mb-4">🎓</div>
+            <h3 className="text-xl font-semibold mb-3">
+              Classes XI & XII (Science)
+            </h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Advanced courses in English, Mathematics, Physics, Chemistry,
+              Biology, and Computer Science—preparing students for higher
+              studies.
+            </p>
+          </div>
+        </div>
+
+        {/* Key Features */}
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Key Features of Our Curriculum
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl shadow-sm text-center hover:shadow-md transition">
+              <div className="w-16 h-16 bg-blue-200 text-blue-800 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                🏛️
               </div>
+              <h3 className="font-semibold text-lg mb-2">CBSE Affiliated</h3>
+              <p className="text-sm text-gray-700">
+                Following the Central Board of Secondary Education’s guidelines
+                and academic rigor.
+              </p>
             </div>
-
-            <div className="bg-yellow-50 p-6 rounded-lg mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-                Senior Secondary (XI - XII)
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    Science Stream
-                  </h3>
-                  <ul className="space-y-1 text-gray-600 text-sm">
-                    <li>• Physics, Chemistry, Biology/Mathematics</li>
-                    <li>• English and Hindi</li>
-                    <li>• Physical Education/Computer Science</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    Commerce Stream
-                  </h3>
-                  <ul className="space-y-1 text-gray-600 text-sm">
-                    <li>• Accountancy, Business Studies, Economics</li>
-                    <li>• English and Hindi</li>
-                    <li>• Mathematics/Physical Education</li>
-                  </ul>
-                </div>
+            <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl shadow-sm text-center hover:shadow-md transition">
+              <div className="w-16 h-16 bg-green-200 text-green-800 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                🕌
               </div>
-            </div>
-
-            <div className="text-center">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-                Key Features
-              </h2>
-              <div className="grid md:grid-cols-3 gap-6 text-center">
-                <div className="p-4">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-2xl">📚</span>
-                  </div>
-                  <h3 className="font-semibold mb-2">CBSE Affiliated</h3>
-                  <p className="text-sm text-gray-600">
-                    Following CBSE curriculum standards
-                  </p>
-                </div>
-                <div className="p-4">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-2xl">🎯</span>
-                  </div>
-                  <h3 className="font-semibold mb-2">Holistic Approach</h3>
-                  <p className="text-sm text-gray-600">
-                    Academic and co-curricular balance
-                  </p>
-                </div>
-                <div className="p-4">
-                  <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-2xl">🏆</span>
-                  </div>
-                  <h3 className="font-semibold mb-2">Excellence Focus</h3>
-                  <p className="text-sm text-gray-600">
-                    Nurturing academic excellence
-                  </p>
-                </div>
-              </div>
+              <h3 className="font-semibold text-lg mb-2">Islamic Education</h3>
+              <p className="text-sm text-gray-700">
+                A secondary Madrassa recognized by Samastha (SKIMVB), promoting
+                moral and spiritual growth.
+              </p>
             </div>
           </div>
         </div>

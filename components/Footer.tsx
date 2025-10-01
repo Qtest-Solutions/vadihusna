@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useLogoUrl } from "@/hooks/use-logo-url";
 import {
   Phone,
   Mail,
@@ -6,9 +7,11 @@ import {
   Facebook,
   Twitter,
   Instagram,
+  Youtube,
 } from "lucide-react";
 
 export default function Footer() {
+  const { logoUrl } = useLogoUrl();
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container-max py-12">
@@ -17,7 +20,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="flex items-center space-x-3">
               <img
-                src="/vadihusnaLogo.png"
+                src={logoUrl}
                 alt="School Logo"
                 className="rounded-xl w-[80%] h-13 object-cover shadow-lg mb-5"
               />
@@ -27,18 +30,36 @@ export default function Footer() {
               since 1996
             </p>
             <div className="flex space-x-4">
-              <Facebook
-                size={20}
-                className="text-gray-400 hover:text-blue-400 cursor-pointer"
-              />
-              <Twitter
-                size={20}
-                className="text-gray-400 hover:text-blue-400 cursor-pointer"
-              />
-              <Instagram
-                size={20}
-                className="text-gray-400 hover:text-blue-400 cursor-pointer"
-              />
+              <Link
+                href={"https://www.youtube.com/@vadihusnapublicschool35"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Youtube
+                  size={20}
+                  className="text-gray-400 hover:text-blue-400 cursor-pointer"
+                />
+              </Link>
+              <Link
+                href={"https://www.facebook.com/VadiHusnaPublicSchoolElettil/"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Facebook
+                  size={20}
+                  className="text-gray-400 hover:text-blue-400 cursor-pointer"
+                />
+              </Link>
+              <Link
+                href={"https://www.instagram.com/vadi__husna/?hl=en/"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram
+                  size={20}
+                  className="text-gray-400 hover:text-blue-400 cursor-pointer"
+                />
+              </Link>
             </div>
           </div>
 

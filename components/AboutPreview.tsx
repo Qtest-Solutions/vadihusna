@@ -9,80 +9,62 @@ import {
 
 export default function AboutPreview() {
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-gray-50">
       <div className="container-max">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div>
-            <h2 className="heading-secondary">
-              About Vadi Husna Public School
-            </h2>
-            <div className="space-y-4 mb-8">
-              <p className="text-body">
-                Founded in 1996 under the leadership of Mr. K. Abdul Khadar,
-                Vadi Husna Public School is dedicated to academic excellence,
-                integrity, and social responsibility. Affiliated with CBSE Delhi
-                (No. 930618), the school blends modern education with moral
-                values, preparing students to navigate challenges with
-                confidence. Rooted in a vision for educational, social, and
-                cultural advancement, we uphold our motto, "Excellence through
-                Education."
-              </p>
-              <p className="text-body">
-                Nestled in a spacious, scenic campus near Elettil town on
-                Koduvally Road, Vadi Husna embraces digital learning and
-                interdisciplinary approaches, fostering a dynamic and
-                future-ready learning environment. By integrating scientific
-                education with moral wisdom, we ensure that students receive a
-                well-rounded education, empowering them to thrive in an
-                ever-evolving world.
-              </p>
-            </div>
-            <div className="space-y-3 mb-8">
-              <div className="flex items-start gap-3 text-gray-700">
-                <Calendar className="text-blue-600 mt-1" size={18} />
-                <span>
-                  Founded in 1996 under the leadership of Mr. K. Abdul Khadar
-                </span>
-              </div>
-              <div className="flex items-start gap-3 text-gray-700">
-                <GraduationCap className="text-blue-600 mt-1" size={18} />
-                <span>Affiliated with CBSE Delhi (No. 930618)</span>
-              </div>
-              <div className="flex items-start gap-3 text-gray-700">
-                <ShieldCheck className="text-blue-600 mt-1" size={18} />
-                <span>
-                  Dedicated to academic excellence, integrity, and social
-                  responsibility
-                </span>
-              </div>
-              <div className="flex items-start gap-3 text-gray-700">
-                <MapPin className="text-blue-600 mt-1" size={18} />
-                <span>
-                  Spacious, scenic campus near Elettil town on Koduvally Road
-                </span>
-              </div>
-              <div className="flex items-start gap-3 text-gray-700">
-                <Laptop className="text-blue-600 mt-1" size={18} />
-                <span>
-                  Embraces digital learning and interdisciplinary approaches
-                </span>
-              </div>
-            </div>
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h2 className="heading-secondary mb-4">
+            About Vadi Husna Public School
+          </h2>
+          <p className="text-body leading-relaxed text-gray-700">
+            Since 1996, Vadi Husna Public School has been committed to nurturing
+            young minds with a foundation of academic excellence, integrity, and
+            social responsibility. As a CBSE-affiliated institution, we blend
+            modern education with timeless values, preparing students to thrive
+            confidently in an ever-evolving world.
+          </p>
+        </div>
 
-            <Link href="/about" className="btn-primary">
-              Learn More About Us
-            </Link>
+        {/* Key Highlights */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+          <div className="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm">
+            <Calendar className="text-blue-600 shrink-0 mt-1" size={20} />
+            <p className="text-gray-700">
+              Established in 1996 under the leadership of Mr. K. Abdul Khadar
+            </p>
           </div>
+          <div className="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm">
+            <GraduationCap className="text-blue-600 shrink-0 mt-1" size={20} />
+            <p className="text-gray-700">
+              Affiliated with CBSE Delhi (No. 930618)
+            </p>
+          </div>
+          <div className="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm">
+            <ShieldCheck className="text-blue-600 shrink-0 mt-1" size={20} />
+            <p className="text-gray-700">
+              Dedicated to academic excellence, character-building, and
+              responsibility
+            </p>
+          </div>
+          <div className="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm">
+            <MapPin className="text-blue-600 shrink-0 mt-1" size={20} />
+            <p className="text-gray-700">
+              Located on a scenic campus near Elettil town on Koduvally Road
+            </p>
+          </div>
+          <div className="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm md:col-span-2">
+            <Laptop className="text-blue-600 shrink-0 mt-1" size={20} />
+            <p className="text-gray-700">
+              Embraces digital learning, innovative practices, and
+              interdisciplinary approaches
+            </p>
+          </div>
+        </div>
 
-          {/* Image */}
-          <div>
-            <img
-              src="https://images.pexels.com/photos/8197543/pexels-photo-8197543.jpeg"
-              alt="School building"
-              className="rounded-xl w-full h-96 object-cover shadow-lg"
-            />
-          </div>
+        {/* CTA */}
+        <div className="text-center">
+          <Link href="/about" className="btn-primary">
+            Learn More About Us
+          </Link>
         </div>
       </div>
     </section>

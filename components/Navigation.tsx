@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLogoUrl } from "@/hooks/use-logo-url";
 import Link from "next/link";
 import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 
@@ -14,9 +15,10 @@ export default function Navigation() {
   const academicsDropdown = [
     { href: "/academics/curriculum", label: "Curriculum" },
     { href: "/academics/faculty", label: "Faculty" },
-    { href: "/academics/achievements", label: "Achievements" },
+    { href: "/academics/examination", label: "Examination" },
   ];
 
+  const { logoUrl } = useLogoUrl();
   return (
     <>
       {/* Top Bar */}
@@ -45,7 +47,7 @@ export default function Navigation() {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3">
               <img
-                src="/vadihusnaLogo.png"
+                src={logoUrl}
                 alt="School Logo"
                 className="rounded-xl w-full h-14 object-cover shadow-lg"
               />
@@ -86,7 +88,11 @@ export default function Navigation() {
                 </button>
 
                 {isAcademicsOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg border z-50">
+                  <div
+                    className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg border z-50"
+                    onMouseEnter={() => mounted && setIsAcademicsOpen(true)}
+                    onMouseLeave={() => mounted && setIsAcademicsOpen(false)}
+                  >
                     <div className="py-2">
                       {academicsDropdown.map((item) => (
                         <Link
