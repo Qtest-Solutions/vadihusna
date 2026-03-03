@@ -62,7 +62,7 @@ export default function AboutPreview() {
 
         {/* CTA */}
         <div className="text-center">
-          <Link href="/about" className="btn-primary rounded-full">
+          <Link href="/about-us" className="btn-primary rounded-full">
             Learn More About Us
           </Link>
         </div>

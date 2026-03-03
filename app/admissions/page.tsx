@@ -56,7 +56,7 @@ export default function AdmissionsPage() {
               <Download className="mr-2" size={20} />
               Download Application Form
             </button>
-            <Link href="/contact" className="btn-secondary border-white text-white hover:bg-white hover:text-blue-600">
+            <Link href="/contactus" className="btn-secondary border-white text-white hover:bg-white hover:text-blue-600">
               <Calendar className="mr-2" size={20} />
               Schedule Campus Visit
             </Link>

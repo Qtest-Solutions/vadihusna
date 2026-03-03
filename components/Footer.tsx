@@ -80,7 +80,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/about-us"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   About Us
@@ -96,7 +96,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/news"
+                  href="/blog"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   News
@@ -112,7 +112,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="/contactus"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Contact Us

@@ -90,7 +90,7 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="section-padding">
+      {/* <section className="section-padding">
         <div className="container-max">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
@@ -98,7 +98,6 @@ export default function AboutPage() {
             </h2>
 
             <div className="relative">
-              {/* Timeline line */}
               <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-blue-200 transform md:-translate-x-0.5"></div>
 
               <div className="space-y-12">
@@ -109,10 +108,8 @@ export default function AboutPage() {
                       index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                     }`}
                   >
-                    {/* Timeline dot */}
                     <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-blue-600 rounded-full transform -translate-x-2 md:-translate-x-2 z-10 ring-4 ring-white shadow-lg"></div>
 
-                    {/* Content */}
                     <div
                       className={`ml-16 md:ml-0 md:w-1/2 ${
                         index % 2 === 0 ? "md:pr-12" : "md:pl-12"
@@ -134,7 +131,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Features Grid */}
       <section className="section-padding bg-gray-50">
@@ -262,7 +259,7 @@ export default function AboutPage() {
               Apply for Admission
             </a> */}
             <a
-              href="/contact"
+              href="/contactus"
               className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
             >
               Contact Us

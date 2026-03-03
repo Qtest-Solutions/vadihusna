@@ -38,7 +38,7 @@ export default function NewsPage() {
                 <div className="flex justify-between items-center">
                   <span className="text-gray-500 text-sm">{news.date}</span>
                   <Link
-                    href={`/news/${news.slug}`}
+                    href={`/blog/${news.slug}`}
                     className="text-blue-600 font-medium hover:underline"
                   >
                     Read More →

@@ -71,7 +71,7 @@ export default function HeroSection() {
             <div className="flex flex-wrap gap-3 sm:gap-4">
               {/* Primary button */}
               <Link
-                href="/about"
+                href="/about-us"
                 className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-full border-2 border-white text-white font-semibold hover:bg-white hover:text-blue-700 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg whitespace-nowrap"
               >
                 About Us
@@ -79,7 +79,7 @@ export default function HeroSection() {
 
               {/* Secondary button */}
               <Link
-                href="/contact"
+                href="/contactus"
                 className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-full border-2 border-white/80 text-white font-semibold hover:bg-white hover:text-blue-700 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg backdrop-blur-sm whitespace-nowrap"
               >
                 <Phone className="mr-2 flex-shrink-0" size={18} />
