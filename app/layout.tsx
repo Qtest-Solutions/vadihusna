@@ -31,6 +31,11 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.vadihusnaschool.com",
   },
+  icons: {
+    icon: "/vadihusnaLogo.png",
+    // you can also specify other icon sizes or apple touch
+    // apple: "/vadihusnaLogo.png",
+  },
 };
 
 export default function RootLayout({
