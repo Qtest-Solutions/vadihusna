@@ -25,7 +25,7 @@ export default function AboutPreview() {
         </div>
 
         {/* Key Highlights */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
           <div className="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm">
             <Calendar className="text-blue-600 shrink-0 mt-1" size={20} />
             <p className="text-gray-700">
@@ -58,11 +58,11 @@ export default function AboutPreview() {
               interdisciplinary approaches
             </p>
           </div>
-        </div>
+        </div> */}
 
         {/* CTA */}
         <div className="text-center">
-          <Link href="/about" className="btn-primary rounded-full">
+          <Link href="/about-us" className="btn-primary rounded-full">
             Learn More About Us
           </Link>
         </div>

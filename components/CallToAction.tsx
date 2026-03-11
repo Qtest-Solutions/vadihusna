@@ -17,7 +17,7 @@ export default function CallToAction() {
 
         {/* CTA Button */}
         <Link
-          href="/contact"
+          href="/contactus"
           className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 font-semibold text-lg py-3 px-8 rounded-full shadow-lg hover:bg-blue-50 hover:shadow-xl transition-transform duration-200 hover:-translate-y-0.5"
         >
           <Phone className="text-green-600" size={22} />

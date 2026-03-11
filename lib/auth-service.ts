@@ -1,19 +1,12 @@
-import { Client, Databases, ID, Query } from "appwrite";
+// Auth service - Appwrite removed, using static/mock data
 
-const DB_ID =
-  process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID || "68c827bb0003c58720c1";
-const USERS_COLLECTION_ID = "admin_users";
-
-const client = new Client()
-  .setEndpoint(
-    process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT || "https://cloud.appwrite.io/v1"
-  )
-  .setProject(
-    process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID || "68c827bb0003c58720c1"
-  );
-
-// Only use Databases, no Account
-const databases = new Databases(client);
+// Mock admin credentials
+const MOCK_ADMIN = {
+  email: "admin@example.com",
+  password: "admin123",
+  name: "Admin",
+  username: "admin",
+};
 
 export interface AdminUser {
   $id: string;
@@ -27,23 +20,19 @@ export interface AdminUser {
 class AuthService {
   async login(username: string, password: string) {
     try {
-      // Check credentials against your database directly
-      const userQuery = await databases.listDocuments(
-        DB_ID,
-        USERS_COLLECTION_ID,
-        [Query.equal("username", username)]
-      );
-
-      if (userQuery.documents.length === 0) {
-        throw new Error("User not found");
+      // Static implementation - check against mock admin
+      if (username !== MOCK_ADMIN.username || password !== MOCK_ADMIN.password) {
+        throw new Error("Invalid credentials");
       }
 
-      const adminUser = userQuery.documents[0] as unknown as AdminUser;
-
-      // Simple password comparison (in production, you should hash passwords)
-      if (adminUser.password !== password) {
-        throw new Error("Invalid password");
-      }
+      const adminUser: AdminUser = {
+        $id: "admin_1",
+        username: MOCK_ADMIN.username,
+        password: MOCK_ADMIN.password,
+        role: "admin",
+        $createdAt: "2025-01-01T00:00:00.000Z",
+        $updatedAt: "2025-01-01T00:00:00.000Z",
+      };
 
       // Store user info in browser storage (simulating a session)
       if (typeof window !== "undefined") {
@@ -103,30 +92,11 @@ class AuthService {
     password: string,
     role: string = "admin"
   ) {
-    try {
-      // Create admin user record directly in your database
-      const adminUser = await databases.createDocument(
-        DB_ID,
-        USERS_COLLECTION_ID,
-        ID.unique(),
-        {
-          username: username,
-          password: password, // In production, hash this password
-          role: role,
-        }
-      );
-
-      return {
-        success: true,
-        user: adminUser,
-      };
-    } catch (error: any) {
-      console.error("Error creating admin:", error);
-      return {
-        success: false,
-        error: error.message || "Failed to create admin user",
-      };
-    }
+    // Static implementation - no-op
+    return {
+      success: false,
+      error: "Admin creation disabled (using static data)",
+    };
   }
 }
 

@@ -37,10 +37,9 @@ export default function FacilitiesPreview() {
     <section className="section-padding bg-gray-50">
       <div className="container-max">
         <div className="text-center mb-12">
-          <h2 className="heading-secondary">World-Class Facilities</h2>
+          <h2 className="heading-secondary">A Place to Learn and Grow</h2>
           <p className="text-body">
-            Modern infrastructure designed to enhance learning and development
-          </p>
+Comfortable classrooms and quality infrastructure designed to support effective learning          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -65,11 +64,11 @@ export default function FacilitiesPreview() {
           })}
         </div>
 
-        <div className="text-center">
+        {/* <div className="text-center">
           <Link href="/facilities" className="btn-primary rounded-full">
             Explore All Facilities
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

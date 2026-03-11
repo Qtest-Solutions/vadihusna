@@ -53,7 +53,7 @@ export default function NewsDetailPage({ params }: NewsDetailPageProps) {
             The news article you're looking for doesn't exist.
           </p>
           <Link
-            href="/news"
+            href="/blog"
             className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors inline-block"
           >
             Back to News
@@ -112,7 +112,7 @@ export default function NewsDetailPage({ params }: NewsDetailPageProps) {
           <div className="mt-12 pt-8 border-t border-gray-200">
             <div className="flex justify-between items-center">
               <Link
-                href="/news"
+                href="/blog"
                 className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors"
               >
                 <svg

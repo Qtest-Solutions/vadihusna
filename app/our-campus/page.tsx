@@ -244,7 +244,7 @@ export default function CampusPage() {
             </div>
             <div className="space-y-4">
               <a
-                href="/contact"
+                href="/contactus"
                 className="group rounded-xl border bg-white p-4 flex items-center justify-between hover:shadow-md transition"
               >
                 <span className="font-medium">Route and pickup queries</span>

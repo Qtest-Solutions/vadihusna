@@ -13,9 +13,9 @@ export default function Navigation() {
   useEffect(() => setMounted(true), []);
 
   const academicsDropdown = [
-    { href: "/academics/curriculum", label: "Curriculum" },
+    { href: "/academics#curriculum", label: "Curriculum" },
     { href: "/academics/faculty", label: "Faculty" },
-    { href: "/academics/examination", label: "Examination" },
+    { href: "/academics#examination", label: "Examination" },
   ];
 
   const { logoUrl } = useLogoUrl();
@@ -65,7 +65,7 @@ export default function Navigation() {
 
               {/* About Us */}
               <Link
-                href="/about"
+                href="/about-us"
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
               >
                 About Us
@@ -110,7 +110,7 @@ export default function Navigation() {
 
               {/* Our Campus */}
               <Link
-                href="/campus"
+                href="/our-campus"
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
               >
                 Our Campus
@@ -118,7 +118,7 @@ export default function Navigation() {
 
               {/* News */}
               <Link
-                href="/news"
+                href="/blog"
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
               >
                 News
@@ -134,7 +134,7 @@ export default function Navigation() {
 
               {/* Contact Us */}
               <Link
-                href="/contact"
+                href="/contactus"
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
               >
                 Contact Us
@@ -165,7 +165,7 @@ export default function Navigation() {
 
                 {/* About Us */}
                 <Link
-                  href="/about"
+                  href="/about-us"
                   className="text-gray-700 hover:text-blue-600 font-medium py-2 px-2 rounded-md hover:bg-gray-50 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
@@ -208,7 +208,7 @@ export default function Navigation() {
 
                 {/* Our Campus */}
                 <Link
-                  href="/campus"
+                  href="/our-campus"
                   className="text-gray-700 hover:text-blue-600 font-medium py-2 px-2 rounded-md hover:bg-gray-50 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
@@ -217,7 +217,7 @@ export default function Navigation() {
 
                 {/* News */}
                 <Link
-                  href="/news"
+                  href="/blog"
                   className="text-gray-700 hover:text-blue-600 font-medium py-2 px-2 rounded-md hover:bg-gray-50 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
@@ -235,7 +235,7 @@ export default function Navigation() {
 
                 {/* Contact Us */}
                 <Link
-                  href="/contact"
+                  href="/contactus"
                   className="text-gray-700 hover:text-blue-600 font-medium py-2 px-2 rounded-md hover:bg-gray-50 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
