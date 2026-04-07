@@ -1,110 +1,66 @@
-"use client";
-
 import Link from "next/link";
-import { GraduationCap, Users, Award, BookOpen, Phone } from "lucide-react";
-import { useState, useEffect } from "react";
+import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
-  const images = ["/vadihusna1.png"];
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    if (images.length <= 1) return;
-    const interval = setInterval(
-      () => setCurrentIndex((prev) => (prev + 1) % images.length),
-      5000
-    );
-    return () => clearInterval(interval);
-  }, [images]);
-
   return (
-    <section
-      className="relative text-white min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center"
-      style={{
-        backgroundImage: `url(${images[currentIndex]})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="absolute inset-0 bg-black/50" />
+    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+      {/* Background Image with Ken Burns Effect */}
+      {/* Note: I'm using an external high-quality placeholder that looks like a school/campus since local assets aren't specified for this layout yet */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?q=80&w=2069&auto=format&fit=crop"
+          alt="Vadi Husna Public School Campus"
+          className="hero-kenburns"
+        />
+        {/* Deep Sapphire Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900/90 z-10" />
+      </div>
 
-      <div className="relative z-10 container-max px-4 sm:px-6 lg:px-8 py-16 md:py-20 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-6 lg:space-y-8">
-            <div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                Excellence through
-                <span className="block text-yellow-300">Education</span>
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-6 leading-relaxed">
-                Nurturing young minds since 1996 with quality CBSE education,
-                holistic development, and strong moral values in the heart of
-                Kozhikode, Kerala.
-              </p>
-            </div>
+      {/* Content */}
+      <div className="container-max relative z-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center mt-20">
 
-            {/* Key Features */}
-            <div className="grid grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8">
-              <div className="flex items-center space-x-2 md:space-x-3">
-                <GraduationCap
-                  className="text-yellow-300 flex-shrink-0"
-                  size={20}
-                />
-                <span className="text-sm sm:text-base">CBSE Affiliated</span>
-              </div>
-              <div className="flex items-center space-x-2 md:space-x-3">
-                <Users className="text-yellow-300 flex-shrink-0" size={20} />
-                <span className="text-sm sm:text-base">LKG to XII</span>
-              </div>
-              <div className="flex items-center space-x-2 md:space-x-3">
-                <Award className="text-yellow-300 flex-shrink-0" size={20} />
-                <span className="text-sm sm:text-base">Since 1996</span>
-              </div>
-              <div className="flex items-center space-x-2 md:space-x-3">
-                <BookOpen className="text-yellow-300 flex-shrink-0" size={20} />
-                <span className="text-sm sm:text-base">English Medium</span>
-              </div>
-            </div>
+        {/* Tiny Badge */}
+        {/* <div className="reveal reveal-up visible">
+          <span className="inline-block py-1 px-4 rounded-full border border-white/20 bg-white/10 backdrop-blur-md text-white text-xs font-bold tracking-widest uppercase mb-6 shadow-xl">
+            Established 1996 • CBSE Affiliation No. 930618
+          </span>
+        </div> */}
 
-            {/* Modern CTA Buttons */}
-            <div className="flex flex-wrap gap-3 sm:gap-4">
-              {/* Primary button */}
-              <Link
-                href="/about-us"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-full border-2 border-white text-white font-semibold hover:bg-white hover:text-blue-700 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg whitespace-nowrap"
-              >
-                About Us
-              </Link>
-
-              {/* Secondary button */}
-              <Link
-                href="/contactus"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-full border-2 border-white/80 text-white font-semibold hover:bg-white hover:text-blue-700 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg backdrop-blur-sm whitespace-nowrap"
-              >
-                <Phone className="mr-2 flex-shrink-0" size={18} />
-                Contact Us
-              </Link>
-            </div>
-          </div>
+        {/* Cinematic Headline */}
+        <div className="reveal reveal-up visible" style={{ transitionDelay: '100ms' }}>
+          <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 mt-11 leading-tight drop-shadow-xl" style={{ fontFamily: 'var(--font-poppins)' }}>
+            Excellence Through <br className="hidden sm:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
+              Education
+            </span>
+          </h1>
         </div>
 
-        {/* Carousel indicators */}
-        {images.length > 1 && (
-          <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
-            {images.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrentIndex(i)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  i === currentIndex
-                    ? "bg-yellow-300 w-8"
-                    : "bg-white/50 hover:bg-white/70"
-                }`}
-              />
-            ))}
+        {/* Subtitle */}
+        <div className="reveal reveal-up visible" style={{ transitionDelay: '200ms' }}>
+          <p className="text-slate-200 text-lg md:text-2xl font-medium max-w-3xl mx-auto mb-6 leading-relaxed drop-shadow-md">
+            Empowering students with modern knowledge while staying rooted in traditional values. Join us on a journey of holistic development.
+          </p>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="reveal reveal-up visible flex flex-col sm:flex-row gap-5 justify-center w-full sm:w-auto" style={{ transitionDelay: '300ms' }}>
+          <Link href="/about-us" className="btn-accent px-10 py-3 text-base group">
+            Learn More
+            <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+          </Link>
+          <Link href="/contactus" className="btn-outline px-10 py-3 text-base">
+            Contact Us
+          </Link>
+        </div>
+
+        {/* Scroll Down Indicator */}
+        <div className="mt-8 flex flex-col items-center animate-[fadeIn_2s_ease-out_forwards]">
+          {/* <p className="text-white/60 text-xs font-bold tracking-widest uppercase mb-1">Scroll to discover</p> */}
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1 backdrop-blur-sm">
+            <div className="w-1.5 h-3 bg-amber-500 rounded-full animate-[float_2s_infinite]" />
           </div>
-        )}
+        </div>
       </div>
     </section>
   );

@@ -1,74 +1,132 @@
+import { BookOpen, Laptop, Microscope, Dumbbell, Bus, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { BookOpen, FlaskConical, Computer, Dumbbell } from "lucide-react";
+import Image from "next/image";
 
 export default function FacilitiesPreview() {
   const facilities = [
     {
+      title: "Science & Computer Labs",
+      description: "6 distinct laboratories including Physics, Chemistry, Biology, and a Computer Lab with 34 workstations.",
+      icon: Microscope,
+      image: "/science_lab.png",
+      color: "from-emerald-900/90 to-slate-900/90",
+      accent: "bg-emerald-500",
+    },
+    {
+      title: "Extensive Library",
+      description: "6 fully-equipped libraries with vast collections, reading spaces, and integrated digital resources.",
       icon: BookOpen,
-      title: "Library & Reading Room",
-      description:
-        "Extensive collection of books and digital resources for comprehensive learning",
-      color: "text-blue-600",
+      image: "/library.png",
+      color: "from-amber-900/90 to-slate-900/90",
+      accent: "bg-amber-500",
     },
     {
-      icon: FlaskConical,
-      title: "Science Laboratories",
-      description:
-        "Well-equipped Physics, Chemistry, and Biology labs for hands-on experiments",
-      color: "text-green-600",
+      title: "Digital Classrooms",
+      description: "44 rooms in total, including 20 fully digitized interactive smart classrooms for advanced learning.",
+      icon: Laptop,
+      image: "/digital_class.png",
+      color: "from-blue-900/90 to-slate-900/90",
+      accent: "bg-blue-500",
     },
     {
-      icon: Computer,
-      title: "Computer Lab",
-      description:
-        "Modern computers with latest software for digital literacy and programming",
-      color: "text-purple-600",
-    },
-    {
+      title: "Physical Education",
+      description: "A massive 12,700 sq. meter playground providing exceptional facilities for sports and physical development.",
       icon: Dumbbell,
-      title: "Sports Facilities",
-      description:
-        "Spacious playground and sports equipment for physical development",
-      color: "text-orange-600",
+      image: "/physical_ed.png",
+      color: "from-rose-900/90 to-slate-900/90",
+      accent: "bg-rose-500",
+    },
+    {
+      title: "School Transportation",
+      description: "Safe and reliable fleet of vehicles covering extensive routes across the surrounding region.",
+      icon: Bus,
+      image: "/transport.png",
+      color: "from-violet-900/90 to-slate-900/90",
+      accent: "bg-violet-500",
     },
   ];
 
   return (
-    <section className="section-padding bg-gray-50">
-      <div className="container-max">
-        <div className="text-center mb-12">
-          <h2 className="heading-secondary">A Place to Learn and Grow</h2>
-          <p className="text-body">
-Comfortable classrooms and quality infrastructure designed to support effective learning          </p>
+    <section className="section-padding bg-slate-900 relative overflow-hidden text-white">
+      {/* Premium Background Elements */}
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none" />
+      <div className="absolute -left-40 top-40 w-96 h-96 bg-emerald-500/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute -right-40 bottom-40 w-96 h-96 bg-blue-500/20 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="container-max relative z-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 reveal reveal-up">
+          <div className="max-w-2xl">
+            <p className="section-label !text-emerald-400">World-Class Infrastructure</p>
+            <h2 className="heading-secondary text-white">Campus Facilities</h2>
+            <p className="text-slate-400 mt-4 text-lg">
+              We provide an optimal environment for academic and extracurricular excellence, ensuring every student has the resources they need to succeed in a dynamic world.
+            </p>
+          </div>
+          <Link href="/facilities" className="btn-primary group shrink-0 hidden md:flex">
+            Explore All Facilities
+            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+          </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
           {facilities.map((facility, index) => {
-            const IconComponent = facility.icon;
+            const Icon = facility.icon;
+            // First item spans 2 columns and 2 rows on large screens
+            const isFeatured = index === 0;
+
             return (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-lg card-hover text-center"
+                className={`group relative overflow-hidden rounded-3xl reveal reveal-up ${isFeatured ? 'md:col-span-2 lg:col-span-2 lg:row-span-2' : ''
+                  }`}
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div
-                  className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4`}
-                >
-                  <IconComponent className={facility.color} size={32} />
+                {/* Background Image */}
+                <Image
+                  src={facility.image}
+                  alt={facility.title}
+                  fill
+                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                  sizes={isFeatured ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
+                />
+
+                {/* Gradient Overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-t ${facility.color} transition-opacity duration-500 opacity-80`} />
+
+                {/* Dark Hover Overlay */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                {/* Content */}
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <div className="transform transition-transform duration-500 group-hover:-translate-y-4">
+                    <div className={`w-12 h-12 rounded-full ${facility.accent} flex items-center justify-center mb-4 shadow-xl`}>
+                      <Icon className="text-white" size={24} />
+                    </div>
+
+                    <h3 className={`font-bold mb-2 font-poppins text-white leading-tight ${isFeatured ? 'text-3xl' : 'text-xl'}`}>
+                      {facility.title}
+                    </h3>
+
+                    <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+                      <div className="overflow-hidden">
+                        <p className={`text-slate-200 mt-2 ${isFeatured ? 'text-lg max-w-lg' : 'text-sm'}`}>
+                          {facility.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {facility.title}
-                </h3>
-                <p className="text-gray-600 text-sm">{facility.description}</p>
               </div>
             );
           })}
         </div>
 
-        {/* <div className="text-center">
-          <Link href="/facilities" className="btn-primary rounded-full">
+        <div className="mt-12 text-center reveal reveal-up md:hidden" style={{ transitionDelay: '300ms' }}>
+          <Link href="/facilities" className="btn-primary group w-full justify-center">
             Explore All Facilities
+            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
           </Link>
-        </div> */}
+        </div>
       </div>
     </section>
   );
