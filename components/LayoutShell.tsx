@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function LayoutShell({
   children,
@@ -18,6 +19,7 @@ export default function LayoutShell({
 
   return (
     <>
+      <ScrollReveal />
       <Navigation />
       <main>{children}</main>
       <Footer />

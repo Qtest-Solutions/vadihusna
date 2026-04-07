@@ -2,84 +2,336 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-poppins: 'Poppins', sans-serif;
-  --primary-blue: #1e40af;
-  --secondary-blue: #3b82f6;
-  --accent-green: #10b981;
-  --accent-orange: #f59e0b;
-  --neutral-100: #f5f5f5;
-  --neutral-800: #1f2937;
-}
-
+/* ─── Design Tokens — "Premium Oxford Aesthetic" ───────────────────── */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 14% 11%;
+    --font-poppins: 'Poppins', sans-serif;
+
+    /* Color system — Deep Sapphire & Satin Gold */
+    --c-primary: #0f172a;
+    /* slate-900 / Deep Sapphire */
+    --c-primary-light: #1e293b;
+    /* slate-800 */
+    --c-accent: #d97706;
+    /* amber-600 / Satin Gold */
+    --c-accent-light: #f59e0b;
+    /* amber-500 */
+    --c-cta: #047857;
+    /* emerald-700 / Rich Emerald */
+    --c-cta-hover: #065f46;
+    /* emerald-800 */
+
+    /* Shadcn/UI tokens mapped to Oxford style */
+    --background: 210 20% 98%;
+    /* Neutral, professional cool-gray tint */
+    --foreground: 222.2 84% 4.9%;
+    /* slate-950 */
     --card: 0 0% 100%;
-    --card-foreground: 220 14% 11%;
+    /* Pure white for clean card contrast */
+    --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 14% 11%;
-    --primary: 221 83% 53%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    /* deep blue based */
     --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 84% 4.9%;
-    --muted: 210 40% 96%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 84% 4.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 221 83% 53%;
-    --radius: 0.5rem;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.75rem;
   }
 }
 
+/* ─── Keyframe Animations ────────────────────────────────────── */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ─── Base Styles ────────────────────────────────────────────── */
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
 
+/* ─── Component Classes ──────────────────────────────────────── */
 @layer components {
+
+  /* Premium Buttons */
   .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-md hover:shadow-lg;
+    @apply inline-flex items-center justify-center px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 cursor-pointer shadow-md hover:shadow-lg hover:-translate-y-0.5;
+    background: linear-gradient(135deg, var(--c-primary) 0%, var(--c-primary-light) 100%);
+    color: white;
   }
-  
-  .btn-secondary {
-    @apply bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 px-6 py-3 rounded-lg font-semibold transition-all duration-200 shadow-md hover:shadow-lg;
+
+  .btn-cta {
+    @apply inline-flex items-center justify-center px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 cursor-pointer shadow-md hover:shadow-lg hover:-translate-y-0.5;
+    background: linear-gradient(135deg, var(--c-cta) 0%, var(--c-cta-hover) 100%);
+    color: white;
   }
-  
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center border-2 border-white/30 text-white hover:bg-white hover:text-slate-900 px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 cursor-pointer backdrop-blur-sm;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 cursor-pointer shadow-md hover:shadow-lg hover:-translate-y-0.5;
+    background: linear-gradient(135deg, var(--c-accent-light) 0%, var(--c-accent) 100%);
+    color: white;
+  }
+
+  /* Layout */
   .section-padding {
-    @apply py-16 px-4 sm:px-6 lg:px-8;
+    @apply py-24 lg:py-32 px-4 sm:px-6 lg:px-8;
   }
-  
+
+  .section-padding-sm {
+    @apply py-16 lg:py-20 px-4 sm:px-6 lg:px-8;
+  }
+
   .container-max {
     @apply max-w-7xl mx-auto;
   }
-  
+
+  /* Typography */
   .heading-primary {
-    @apply text-4xl lg:text-5xl font-bold text-gray-900 mb-6;
+    @apply text-5xl lg:text-7xl font-bold mb-6 tracking-tight;
+    color: var(--foreground);
+    font-family: var(--font-poppins);
   }
-  
+
   .heading-secondary {
-    @apply text-3xl lg:text-4xl font-bold text-gray-900 mb-4;
+    @apply text-4xl lg:text-5xl font-bold mb-4 tracking-tight;
+    color: var(--foreground);
+    font-family: var(--font-poppins);
   }
-  
+
+  .heading-tertiary {
+    @apply text-2xl font-bold;
+    color: var(--foreground);
+    font-family: var(--font-poppins);
+  }
+
   .text-body {
-    @apply text-gray-600 text-lg leading-relaxed;
+    @apply text-lg lg:text-xl leading-relaxed;
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Section label */
+  .section-label {
+    @apply text-sm font-bold tracking-[0.2em] uppercase mb-4;
+    color: var(--c-accent);
+  }
+
+  /* Page hero — Cinematic full-width */
+  .page-hero {
+    @apply relative py-32 lg:py-48 px-4 sm:px-6 lg:px-8 text-white flex items-center justify-center overflow-hidden;
+    background-image: url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?q=80&w=2069&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Parallax effect */
+  }
+
+  .page-hero::before {
+    content: '';
+    @apply absolute inset-0 bg-slate-900/70 z-10;
+    /* Dark overlay */
+  }
+
+  .page-hero>div {
+    @apply relative z-20;
+  }
+
+  .page-hero h1 {
+    @apply text-5xl lg:text-6xl font-bold mb-6;
+    font-family: var(--font-poppins);
+  }
+
+  .page-hero p {
+    @apply text-xl lg:text-2xl font-medium;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  /* Link accent */
+  .link-accent {
+    @apply text-sm font-bold transition-colors inline-flex items-center gap-1 cursor-pointer;
+    color: var(--c-accent);
+  }
+
+  .link-accent:hover {
+    color: var(--c-accent-light);
   }
 }
 
-.hero-gradient {
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+/* ─── Premium Glassmorphism & Effects ────────────────────────── */
+.glass-panel {
+  @apply bg-white/80 backdrop-blur-xl border border-white/50 shadow-xl rounded-2xl;
 }
 
-.card-hover {
-  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+.glass-dark {
+  @apply bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 shadow-xl rounded-2xl text-white;
+}
+
+.hero-kenburns {
+  @apply absolute inset-0 w-full h-full object-cover;
+  animation: kenBurns 20s ease-out forwards;
+}
+
+.card-clean {
+  @apply bg-card border border-border shadow-sm rounded-2xl transition-all duration-300;
+}
+
+.card-clean:hover {
+  @apply shadow-xl -translate-y-1;
+}
+
+/* ─── Nav Link Animation ─────────────────────────────────────── */
+.nav-link-animated {
+  @apply relative font-semibold transition-colors duration-200 cursor-pointer;
+}
+
+.nav-link-animated::after {
+  content: '';
+  @apply absolute -bottom-1 left-0 w-0 h-0.5 rounded-full transition-all duration-300;
+  background-color: var(--c-accent);
+}
+
+.nav-link-animated:hover::after {
+  @apply w-full;
+}
+
+/* ─── Scroll Reveal Animations ───────────────────────────────── */
+.reveal {
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-up {
+  transform: translateY(40px);
+}
+
+.reveal-up.visible {
+  transform: translateY(0);
+}
+
+.reveal-left {
+  transform: translateX(-40px);
+}
+
+.reveal-left.visible {
+  transform: translateX(0);
+}
+
+.reveal-right {
+  transform: translateX(40px);
+}
+
+.reveal-right.visible {
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  transform: scale(0.9);
+}
+
+.reveal-scale.visible {
+  transform: scale(1);
+}
+
+/* ─── Table Styles (for disclosure/data pages) ───────────────── */
+.table-clean {
+  @apply w-full border-collapse;
+}
+
+.table-clean th {
+  @apply text-left text-xs font-bold uppercase tracking-wider px-5 py-4 border-b;
+  background-color: hsl(var(--secondary));
+  border-color: hsl(var(--border));
+  color: hsl(var(--foreground));
+}
+
+.table-clean td {
+  @apply px-5 py-4 text-sm border-b;
+  color: hsl(var(--muted-foreground));
+  border-color: hsl(var(--border));
+}
+
+.table-clean tbody tr:hover {
+  background-color: hsl(var(--secondary));
+}
+
+/* ─── Badge Styles (designation, tags) ───────────────────────── */
+.badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wide;
+}
+
+.badge-primary {
+  background-color: var(--c-primary);
+  color: white;
+}
+
+.badge-accent {
+  background-color: var(--c-accent);
+  color: white;
+}
+
+.badge-teal {
+  background-color: var(--c-cta);
+  color: white;
 }

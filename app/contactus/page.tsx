@@ -63,144 +63,136 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-24">
-      {/* ✅ Modal instead of query-param alerts */}
+    <div>
+      {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-4">
-          <div className="bg-white rounded-xl shadow-xl p-6 max-w-sm w-full text-center relative">
+        <div className="fixed inset-0 bg-stone-900/40 flex items-center justify-center z-50 px-4 backdrop-blur-sm">
+          <div className="bg-white rounded-xl shadow-xl p-8 max-w-sm w-full text-center relative border border-stone-200">
             <button
               onClick={handleCloseModal}
-              className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
+              className="absolute top-4 right-4 text-stone-400 hover:text-stone-600 transition"
+              aria-label="Close modal"
             >
-              <X size={18} />
+              <X size={20} />
             </button>
 
             {showModal === "success" ? (
               <>
-                <CheckCircle className="text-green-600 w-12 h-12 mx-auto mb-3" />
-                <h2 className="text-xl font-bold text-gray-900 mb-2">
+                <CheckCircle className="mx-auto mb-4" style={{ color: 'var(--c-cta)', width: '3rem', height: '3rem' }} />
+                <h2 className="text-xl font-semibold text-stone-900 mb-2 font-poppins">
                   Message Sent!
                 </h2>
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="text-stone-600 text-sm mb-6 leading-relaxed">
                   Thank you for contacting us. We’ll respond within 24 hours.
                 </p>
               </>
             ) : (
               <>
-                <AlertCircle className="text-red-600 w-12 h-12 mx-auto mb-3" />
-                <h2 className="text-xl font-bold text-gray-900 mb-2">
+                <AlertCircle className="text-red-600 mx-auto mb-4" style={{ width: '3rem', height: '3rem' }} />
+                <h2 className="text-xl font-semibold text-stone-900 mb-2 font-poppins">
                   Something went wrong
                 </h2>
-                <p className="text-gray-600 text-sm mb-4">
-                  Please try again later or contact us directly.
+                <p className="text-stone-600 text-sm mb-6 leading-relaxed">
+                  Please try again later or contact us directly via phone.
                 </p>
               </>
             )}
 
             <button
               onClick={handleCloseModal}
-              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium py-2 px-6 rounded-lg hover:from-blue-700 hover:to-blue-800 transition"
+              className="btn-primary w-full"
             >
-              OK
+              Okay
             </button>
           </div>
         </div>
       )}
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-green-600 text-white py-12">
+      <section className="page-hero">
         <div className="container-max text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 mb-4">
-            <MessageSquare className="h-4 w-4" />
-            <span className="text-sm font-medium">Get in Touch</span>
-          </div>
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">Contact Us</h1>
-          <p className="text-lg text-blue-100 max-w-xl mx-auto">
-            Ready to join our school family? We're here to help.
+          <h1 className="heading-primary text-white">Contact Us</h1>
+          <p className="text-xl text-stone-300 max-w-2xl mx-auto">
+            Ready to join our school family? We're here to answer any questions you might have.
           </p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-12">
-        <div className="container-max max-w-6xl">
-          <div className="grid lg:grid-cols-5 gap-8">
+      <section className="section-padding bg-stone-50">
+        <div className="container-max">
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
             {/* Contact Info */}
-            <div className="lg:col-span-2 space-y-4">
-              <h2 className="text-xl font-bold text-gray-900 mb-4">
-                Quick Contact
-              </h2>
+            <div className="lg:col-span-2 space-y-6">
+              <div>
+                <p className="section-label">Information</p>
+                <h2 className="text-2xl font-semibold text-stone-900 mb-6 font-poppins">
+                  Get in Touch
+                </h2>
+              </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-4 ring-1 ring-gray-100 hover:shadow-md transition">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-blue-50 rounded-lg">
-                    <MapPin className="text-blue-600" size={18} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-sm text-gray-900">
-                      Visit Us
-                    </h3>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      Elettil P.O., Koduvally Road
-                      <br />
-                      Kozhikode, Kerala - 673572
-                    </p>
+              <div className="card-clean p-6 flex items-start gap-4">
+                <div className="p-3 rounded-lg bg-stone-100 flex-shrink-0">
+                  <MapPin size={20} style={{ color: 'var(--c-accent)' }} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-stone-900 mb-1">
+                    Visit Us
+                  </h3>
+                  <p className="text-sm text-stone-600 leading-relaxed">
+                    Elettil P.O., Koduvally Road
+                    <br />
+                    Kozhikode, Kerala - 673572
+                  </p>
+                </div>
+              </div>
+
+              <div className="card-clean p-6 flex items-start gap-4">
+                <div className="p-3 rounded-lg bg-stone-100 flex-shrink-0">
+                  <Phone size={20} style={{ color: 'var(--c-primary)' }} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-stone-900 mb-2">
+                    Call Us
+                  </h3>
+                  <div className="space-y-1.5 text-sm text-stone-600 flex flex-col">
+                    <a
+                      href="tel:+919946100154"
+                      className="hover:text-stone-900 transition-colors"
+                    >
+                      +91-9946100154
+                    </a>
+                    <a
+                      href="tel:+919539777154"
+                      className="hover:text-stone-900 transition-colors"
+                    >
+                      +91-9539777154
+                    </a>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-4 ring-1 ring-gray-100 hover:shadow-md transition">
-                <div className="flex items-start gap-3">
-                  <div className="p-2 bg-green-50 rounded-lg">
-                    <Phone className="text-green-600" size={18} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-sm text-gray-900 mb-1">
-                      Call Us
-                    </h3>
-                    <div className="flex-col space-y-0.5 text-xs text-gray-600">
-                      <a
-                        href="tel:+919946100154"
-                        className="hover:text-green-600"
-                      >
-                        +91-9946100154
-                      </a>
-                    </div>
-                    <div className="flex-col space-y-0.5 text-xs text-gray-600">
-                      <a
-                        href="tel:+919539777154"
-                        className="hover:text-green-600"
-                      >
-                        +91-9539777154
-                      </a>
-                    </div>
-                  </div>
+              <div className="card-clean p-6 flex items-start gap-4">
+                <div className="p-3 rounded-lg bg-stone-100 flex-shrink-0">
+                  <Mail size={20} style={{ color: 'var(--c-cta)' }} />
                 </div>
-              </div>
-
-              <div className="bg-white rounded-lg shadow-sm p-4 ring-1 ring-gray-100 hover:shadow-md transition">
-                <div className="flex items-start gap-3">
-                  <div className="p-2 bg-purple-50 rounded-lg">
-                    <Mail className="text-purple-600" size={18} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-sm text-gray-900 mb-1">
-                      Email Us
-                    </h3>
-                    <div className="space-y-0.5 text-xs text-gray-600">
-                      <a
-                        href="mailto:vhpseduc@gmail.com"
-                        className="block hover:text-purple-600"
-                      >
-                        vhpseduc@gmail.com
-                      </a>
-                      <a
-                        href="mailto:vadihusna@yahoo.co.in"
-                        className="block hover:text-purple-600"
-                      >
-                        vadihusna@yahoo.co.in
-                      </a>
-                    </div>
+                <div>
+                  <h3 className="font-semibold text-stone-900 mb-2">
+                    Email Us
+                  </h3>
+                  <div className="space-y-1.5 text-sm flex flex-col">
+                    <a
+                      href="mailto:vhpseduc@gmail.com"
+                      className="link-accent font-normal"
+                    >
+                      vhpseduc@gmail.com
+                    </a>
+                    <a
+                      href="mailto:vadihusna@yahoo.co.in"
+                      className="link-accent font-normal"
+                    >
+                      vadihusna@yahoo.co.in
+                    </a>
                   </div>
                 </div>
               </div>
@@ -208,19 +200,19 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <div className="lg:col-span-3">
-              <div className="bg-white rounded-lg shadow-sm p-6 ring-1 ring-gray-100">
-                <h2 className="text-xl font-bold text-gray-900 mb-2">
+              <div className="card-clean p-8 lg:p-10 border-t-4" style={{ borderTopColor: 'var(--c-primary)' }}>
+                <h2 className="text-2xl font-semibold text-stone-900 mb-2 font-poppins">
                   Send Message
                 </h2>
-                <p className="text-sm text-gray-600 mb-6">
-                  Fill out the form and we’ll get back to you soon.
+                <p className="text-sm text-stone-500 mb-8">
+                  Fill out the form and our administrative team will get back to you shortly.
                 </p>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Full Name *
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-1.5">
+                      <label className="text-sm font-medium text-stone-700">
+                        Full Name <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="text"
@@ -228,13 +220,14 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-3 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 text-sm"
+                        className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent text-sm bg-stone-50 focus:bg-white transition-colors"
+                        style={{ '--tw-ring-color': 'var(--c-primary-light)' } as any}
                         placeholder="Your name"
                       />
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Email *
+                    <div className="space-y-1.5">
+                      <label className="text-sm font-medium text-stone-700">
+                        Email <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="email"
@@ -242,15 +235,16 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-3 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 text-sm"
+                        className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent text-sm bg-stone-50 focus:bg-white transition-colors"
+                        style={{ '--tw-ring-color': 'var(--c-primary-light)' } as any}
                         placeholder="your@email.com"
                       />
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-1.5">
+                      <label className="text-sm font-medium text-stone-700">
                         Phone
                       </label>
                       <input
@@ -258,24 +252,24 @@ export default function ContactPage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-3 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 text-sm"
+                        className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent text-sm bg-stone-50 focus:bg-white transition-colors"
+                        style={{ '--tw-ring-color': 'var(--c-primary-light)' } as any}
                         placeholder="+91 9876543210"
                       />
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Subject *
+                    <div className="space-y-1.5">
+                      <label className="text-sm font-medium text-stone-700">
+                        Subject <span className="text-red-500">*</span>
                       </label>
                       <select
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full px-3 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 text-sm"
+                        className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent text-sm bg-stone-50 focus:bg-white transition-colors appearance-none cursor-pointer"
+                        style={{ '--tw-ring-color': 'var(--c-primary-light)' } as any}
                       >
-                        <option value="Admission Inquiry">
-                          Admission Inquiry
-                        </option>
+                        <option value="Admission Inquiry">Admission Inquiry</option>
                         <option value="Academic Info">Academic Info</option>
                         <option value="Facilities">Facilities</option>
                         <option value="Transport">Transport</option>
@@ -284,17 +278,18 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Message *
+                  <div className="space-y-1.5">
+                    <label className="text-sm font-medium text-stone-700">
+                      Message <span className="text-red-500">*</span>
                     </label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      rows={4}
-                      className="w-full px-3 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 text-sm resize-none"
+                      rows={5}
+                      className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent text-sm bg-stone-50 focus:bg-white transition-colors resize-none"
+                      style={{ '--tw-ring-color': 'var(--c-primary-light)' } as any}
                       placeholder="Tell us about your inquiry..."
                     />
                   </div>
@@ -302,10 +297,13 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg hover:from-blue-700 hover:to-blue-800 transition flex items-center justify-center gap-2 shadow-md"
+                    className="btn-primary w-full gap-2 text-base"
                   >
-                    {loading ? "Sending..." : <Send size={16} />}
-                    {!loading && "Send Message"}
+                    {loading ? "Sending..." : (
+                      <>
+                        Send Message <Send size={16} />
+                      </>
+                    )}
                   </button>
                 </form>
               </div>
@@ -315,17 +313,15 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="py-8 bg-gray-50">
-        <div className="container-max max-w-4xl">
-          <div className="text-center mb-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-1">Find Us</h2>
-            <p className="text-sm text-gray-600">
-              Located in Kozhikode, Kerala
-            </p>
+      <section className="section-padding bg-white border-t border-stone-200">
+        <div className="container-max">
+          <div className="text-center mb-10">
+            <p className="section-label">Location</p>
+            <h2 className="heading-secondary">Find Us</h2>
           </div>
 
-          <div className="bg-white rounded-xl shadow-sm ring-1 ring-gray-100 overflow-hidden">
-            <div className="aspect-[2/1]">
+          <div className="card-clean overflow-hidden max-w-4xl mx-auto">
+            <div className="aspect-video w-full">
               <iframe
                 title="Vadi Husna Public School Location"
                 src="https://www.google.com/maps?q=11.391482,75.882768&z=15&t=m&output=embed&hl=en"
@@ -336,17 +332,17 @@ export default function ContactPage() {
                 allowFullScreen
               />
             </div>
-            <div className="px-4 py-3 bg-gray-50 border-t flex justify-between items-center">
-              <p className="text-xs text-gray-600">
-                Elettil P.O., Koduvally Road, Kozhikode
+            <div className="px-6 py-4 bg-stone-50 border-t border-stone-100 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+              <p className="text-sm text-stone-600 font-medium">
+                Elettil P.O., Koduvally Road, Kozhikode, Kerala 673572
               </p>
               <a
                 href="https://www.google.com/maps?ll=11.391482,75.882768&z=15&t=m"
                 target="_blank"
                 rel="noreferrer"
-                className="text-blue-600 hover:text-blue-700 text-xs font-medium transition"
+                className="link-accent whitespace-nowrap"
               >
-                Open in Maps →
+                Open in Google Maps →
               </a>
             </div>
           </div>
