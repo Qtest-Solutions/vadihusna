@@ -42,8 +42,8 @@ export default function Navigation() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${scrolled
-          ? 'py-2 bg-black/90 backdrop-blur-xl border-b border-white/20 shadow-lg'
-          : 'py-4 bg-transparent'
+        ? 'py-2 bg-black/90 backdrop-blur-xl border-b border-white/20 shadow-lg'
+        : 'py-4 bg-transparent'
         }`}
     >
 
@@ -73,7 +73,7 @@ export default function Navigation() {
             <img
               src={logoUrl}
               alt="Vadi Husna Public School Logo"
-              className={`object-contain transition-all duration-300 group-hover:scale-105 ${scrolled ? "h-12 sm:h-14 brightness-0 invert drop-shadow-sm" : "h-14 sm:h-16 brightness-0 invert drop-shadow-lg"
+              className={`object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] ${scrolled ? "h-14 sm:h-16" : "h-14 sm:h-16"
                 }`}
             />
           </Link>
