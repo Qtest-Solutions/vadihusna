@@ -16,6 +16,8 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900/90 z-10" />
       </div>
 
+
+
       {/* Content */}
       <div className="container-max relative z-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center mt-20">
 

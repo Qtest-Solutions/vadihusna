@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import { Download, Calendar, CheckCircle, Phone, Mail } from 'lucide-react';
 
-export const metadata = {
-  title: 'Admissions - Vadi Husna Public School',
-  description: 'Apply for admission to VHPS. Get admission process, eligibility criteria, fees structure, and download application forms.',
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Admissions 2024-25',
+  description: 'Apply for admission at Vadi Husna Public School for the academic year 2024-25. Find information on the admission process, eligibility criteria, required documents, and fee structure.',
 };
 
 export default function AdmissionsPage() {
@@ -51,7 +53,7 @@ export default function AdmissionsPage() {
             Join our school family and embark on a journey of academic excellence, 
             character development, and holistic growth.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button className="btn-cta text-white" style={{ backgroundColor: 'var(--c-cta)' }}>
               <Download className="mr-2" size={18} />
               Download Application Form
@@ -60,6 +62,9 @@ export default function AdmissionsPage() {
               <Calendar className="mr-2" size={18} />
               Schedule Campus Visit
             </Link>
+            <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20 text-white text-xs font-bold uppercase tracking-widest mt-4 sm:mt-0">
+              Registration opens in January
+            </div>
           </div>
         </div>
       </section>
@@ -219,12 +224,12 @@ export default function AdmissionsPage() {
               <p className="text-sm font-medium" style={{ color: 'var(--c-cta)' }}>+91-9946100154</p>
             </a>
             
-            <a href="mailto:vhpseduc@gmail.com" className="bg-white p-6 rounded-xl hover:shadow-lg transition-shadow group">
+            <a href="mailto:vadihusnapublicschool@gmail.com" className="bg-white p-6 rounded-xl hover:shadow-lg transition-shadow group">
               <div className="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center bg-stone-50 group-hover:bg-stone-100 transition-colors">
                 <Mail style={{ color: 'var(--c-primary)' }} size={20} />
               </div>
               <h3 className="font-semibold text-stone-900 mb-1">Email Us</h3>
-              <p className="text-sm font-medium" style={{ color: 'var(--c-cta)' }}>vhpseduc@gmail.com</p>
+              <p className="text-sm font-medium" style={{ color: 'var(--c-cta)' }}>vadihusnapublicschool@gmail.com</p>
             </a>
           </div>
         </div>

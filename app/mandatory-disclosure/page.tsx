@@ -1,7 +1,9 @@
-export const metadata = {
-  title: "Mandatory Disclosure - Vadi Husna Public School",
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mandatory Disclosure",
   description:
-    "CBSE mandatory disclosure for VHPS including affiliation details, trust information, infrastructure, and academic details.",
+    "CBSE mandatory disclosure for VHPS including affiliation details, trust information, infrastructure, and academic details as per board regulations.",
 };
 
 export default function MandatoryDisclosurePage() {
@@ -75,12 +77,12 @@ export default function MandatoryDisclosurePage() {
                     <tr>
                       <td>5</td>
                       <td className="font-medium text-stone-900">PRINCIPAL NAME & QUALIFICATION</td>
-                      <td>Sheeba M<br /><span className="text-stone-500 text-xs">M.A, B.Ed</span></td>
+                      <td>[To be updated]<br /><span className="text-stone-500 text-xs">-</span></td>
                     </tr>
                     <tr>
                       <td>6</td>
                       <td className="font-medium text-stone-900">SCHOOL EMAIL ID</td>
-                      <td>vhpseduc@gmail.com<br />vadihusna@yahoo.co.in</td>
+                      <p>vadihusnapublicschool@gmail.com</p>
                     </tr>
                     <tr>
                       <td>7</td>
@@ -300,7 +302,7 @@ export default function MandatoryDisclosurePage() {
                     <tr>
                       <td>1</td>
                       <td className="font-medium text-stone-900">PRINCIPAL</td>
-                      <td>Mrs. SHEEBA M<br /><span className="text-stone-500 text-xs">M.A,B.Ed (English) | 25+ Years Exp.</span></td>
+                      <td>[To be updated]<br /><span className="text-stone-500 text-xs">-</span></td>
                     </tr>
                     <tr>
                       <td>2</td>

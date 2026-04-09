@@ -1,4 +1,12 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions",
+  description: "Terms and conditions for using the Vadi Husna Public School website and services.",
+};
+
 export default function TermsPage() {
+
   return (
     <section className="section-padding">
       <div className="container-max">

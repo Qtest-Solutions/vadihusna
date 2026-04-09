@@ -21,33 +21,33 @@ export default function AboutPreview() {
             
             <div className="reveal reveal-up visible" style={{ transitionDelay: '100ms' }}>
               <p className="text-body text-slate-600 mb-6 text-lg leading-relaxed">
-                Founded by the Vadi Husna Educational & Charitable Association under the leadership of Mr. K. Abdul Khadar, our school was established to drive social, cultural, and educational advancement in the rural community of Elettil, Koduvally.
+                Staying rooted to the philosophical foundations of education and having objectives to strive for educational, social, cultural and economic advancement in and around Elettil, a team of dedicated young men headed by Mr. K. Abdul Khadar, the founder General Secretary of Vadi Husna, established Vadi Husna Public School in 1996.
               </p>
               <p className="text-body text-slate-600 mb-8 text-lg leading-relaxed">
-                We blend modern scientific education with traditional moral instruction. As a proud Senior Secondary CBSE School (Affiliation No. 930618) and a trusted member of the UNESCO ASPnet, we maintain world-class standards while anchoring our students in community values.
+                Ever since its inception, the school has set itself a benchmark in academic excellence, integrity, social and moral responsibility so as to enable the pupils to face the world of stiff competitions and tough challenges.
               </p>
             </div>
 
             <div className="reveal reveal-up grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10" style={{ transitionDelay: '200ms' }}>
-               <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white transition-colors group">
-                 <div className="bg-slate-100 p-3 rounded-lg group-hover:bg-amber-100 transition-colors">
-                   <Target className="text-slate-800" size={24} />
-                 </div>
-                 <div>
-                   <h3 className="font-bold text-slate-900 mb-1">Our Mission</h3>
-                   <p className="text-sm text-slate-600">Educational, social, and cultural advancement in Elettil.</p>
-                 </div>
-               </div>
-               
-               <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white transition-colors group">
-                 <div className="bg-slate-100 p-3 rounded-lg group-hover:bg-amber-100 transition-colors">
-                   <Globe className="text-slate-800" size={24} />
-                 </div>
-                 <div>
-                   <h3 className="font-bold text-slate-900 mb-1">Global Vision</h3>
-                   <p className="text-sm text-slate-600">UNESCO ASPnet member promoting global citizenship and peace.</p>
-                 </div>
-               </div>
+                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white transition-colors group">
+                  <div className="bg-slate-100 p-3 rounded-lg group-hover:bg-amber-100 transition-colors">
+                    <Target className="text-slate-800" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-slate-900 mb-1">Our Mission</h3>
+                    <p className="text-sm text-slate-600">To nurse and nurture creativity in the minds of our students and discover their manifold potentialities.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white transition-colors group">
+                  <div className="bg-slate-100 p-3 rounded-lg group-hover:bg-amber-100 transition-colors">
+                    <Globe className="text-slate-800" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-slate-900 mb-1">Our Vision</h3>
+                    <p className="text-sm text-slate-600">Excellence through holistic education for whatever professional path the students choose.</p>
+                  </div>
+                </div>
             </div>
 
             <div className="reveal reveal-up" style={{ transitionDelay: '300ms' }}>

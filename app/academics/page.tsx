@@ -1,4 +1,12 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Academics",
+  description: "Explore our academic programs, curriculum framework, and meet our dedicated faculty. We offer quality education from LKG to XII affiliated with CBSE.",
+};
+
 import Link from "next/link";
+
 import { 
   BookOpen, 
   GraduationCap, 

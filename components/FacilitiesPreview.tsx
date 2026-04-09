@@ -1,6 +1,5 @@
 import { BookOpen, Laptop, Microscope, Dumbbell, Bus, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function FacilitiesPreview() {
   const facilities = [
@@ -8,7 +7,6 @@ export default function FacilitiesPreview() {
       title: "Science & Computer Labs",
       description: "6 distinct laboratories including Physics, Chemistry, Biology, and a Computer Lab with 34 workstations.",
       icon: Microscope,
-      image: "/science_lab.png",
       color: "from-emerald-900/90 to-slate-900/90",
       accent: "bg-emerald-500",
     },
@@ -16,7 +14,6 @@ export default function FacilitiesPreview() {
       title: "Extensive Library",
       description: "6 fully-equipped libraries with vast collections, reading spaces, and integrated digital resources.",
       icon: BookOpen,
-      image: "/library.png",
       color: "from-amber-900/90 to-slate-900/90",
       accent: "bg-amber-500",
     },
@@ -24,7 +21,6 @@ export default function FacilitiesPreview() {
       title: "Digital Classrooms",
       description: "44 rooms in total, including 20 fully digitized interactive smart classrooms for advanced learning.",
       icon: Laptop,
-      image: "/digital_class.png",
       color: "from-blue-900/90 to-slate-900/90",
       accent: "bg-blue-500",
     },
@@ -32,7 +28,6 @@ export default function FacilitiesPreview() {
       title: "Physical Education",
       description: "A massive 12,700 sq. meter playground providing exceptional facilities for sports and physical development.",
       icon: Dumbbell,
-      image: "/physical_ed.png",
       color: "from-rose-900/90 to-slate-900/90",
       accent: "bg-rose-500",
     },
@@ -40,7 +35,6 @@ export default function FacilitiesPreview() {
       title: "School Transportation",
       description: "Safe and reliable fleet of vehicles covering extensive routes across the surrounding region.",
       icon: Bus,
-      image: "/transport.png",
       color: "from-violet-900/90 to-slate-900/90",
       accent: "bg-violet-500",
     },
@@ -81,17 +75,8 @@ export default function FacilitiesPreview() {
                   }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                {/* Background Image */}
-                <Image
-                  src={facility.image}
-                  alt={facility.title}
-                  fill
-                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                  sizes={isFeatured ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
-                />
-
-                {/* Gradient Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-t ${facility.color} transition-opacity duration-500 opacity-80`} />
+                {/* Gradient Overlay - Now solid for a clean look without images */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${facility.color} opacity-100`} />
 
                 {/* Dark Hover Overlay */}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

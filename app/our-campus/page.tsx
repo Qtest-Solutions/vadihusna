@@ -8,6 +8,12 @@ import {
   Car,
   ArrowRight,
 } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Campus",
+  description: "Explore the Vadi Husna Public School campus. Learn about our library with 4,000+ books, specialized science laboratories, 800-seat auditorium, and reliable transportation services.",
+};
 
 export default function CampusPage() {
   return (
@@ -202,34 +208,55 @@ export default function CampusPage() {
         </div>
       </section>
 
-      {/* Transportation */}
-      <section id="transportation" className="section-padding bg-white scroll-mt-16">
+      {/* Auditorium */}
+      <section id="auditorium" className="section-padding bg-stone-50 border-y border-stone-200 scroll-mt-16">
         <div className="container-max">
           <div className="flex items-center gap-3 mb-8">
             <div className="p-2.5 rounded-lg bg-stone-100 flex-shrink-0">
-              <Car className="h-6 w-6" style={{ color: 'var(--c-accent)' }} />
+              <Laptop className="h-6 w-6" style={{ color: 'var(--c-primary)' }} />
             </div>
-            <h2 className="heading-secondary !mb-0">Transportation</h2>
+            <h2 className="heading-secondary !mb-0">Auditorium</h2>
+          </div>
+          <div className="card-clean p-8 bg-white">
+            <p className="text-body text-stone-700 leading-relaxed">
+              Our campus features a spacious, state-of-the-art auditorium with a 
+              <strong className="text-stone-900"> capacity of over 800 seats</strong>. 
+              It serves as the hub for major school functions, cultural programs, 
+              seminars, and academic gatherings, providing an excellent platform 
+              for students to showcase their talents.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Rules & Discipline */}
+      <section id="rules" className="section-padding bg-white scroll-mt-16">
+        <div className="container-max">
+          <div className="text-center mb-16">
+            <p className="section-label">Campus Life</p>
+            <h2 className="heading-secondary">Rules & Discipline</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 items-center">
-            <div className="md:col-span-2">
-              <div className="card-clean p-8 bg-stone-50 border-none">
-                <p className="text-body text-stone-700">
-                  The school operates a fleet of vehicles to provide safe
-                  transportation of pupils to and from surrounding areas. We prioritize student safety with experienced drivers and well-maintained vehicles.
-                </p>
-              </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="card-clean p-8 border-t-4 border-amber-500">
+              <h3 className="text-xl font-bold text-slate-900 mb-4">School Timing</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                The school begins at <strong className="text-slate-900">9:00 AM</strong>. Pupils must reach the school at least 5 minutes before the first bell. Every student must bring the school diary to class every day.
+              </p>
             </div>
-            <div>
-              <a
-                href="/contactus"
-                className="card-clean p-6 flex flex-col items-center text-center group hover:bg-stone-50 transition-colors"
-                style={{ borderColor: 'var(--c-accent)' }}
-              >
-                <span className="font-semibold text-stone-900 mb-2">Route & pickup queries</span>
-                <span className="link-accent">Contact Transport Office <ArrowRight className="h-4 w-4 ml-1" /></span>
-              </a>
+
+            <div className="card-clean p-8 border-t-4 border-amber-500">
+              <h3 className="text-xl font-bold text-slate-900 mb-4">Conduct & Leave</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Regularity is strictly required. Leave of absence should be recorded in the school diary. Pupils must come in clean, tidy uniforms. Respect for school property and polite behavior is mandatory.
+              </p>
+            </div>
+
+            <div className="card-clean p-8 border-t-4 border-amber-500">
+              <h3 className="text-xl font-bold text-slate-900 mb-4">Prohibitions</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Mobile phones, cameras, and all other electronic gadgets are <strong className="text-red-600 uppercase">strictly prohibited</strong> on campus. Discipline is the soul of our institution.
+              </p>
             </div>
           </div>
         </div>
