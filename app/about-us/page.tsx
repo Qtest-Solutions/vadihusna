@@ -1,8 +1,10 @@
 import { GraduationCap, Building2, MapPin, Sparkles, Target, Globe, History, ArrowRight } from "lucide-react";
 
-export const metadata = {
-  title: "About Us - Vadi Husna Public School",
-  description: "Our History – Origin and Development",
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn about Vadi Husna Public School's legacy since 1996, our mission to nurture creativity, and our vision of excellence through holistic education.",
 };
 
 export default function AboutPage() {
@@ -58,10 +60,20 @@ export default function AboutPage() {
             <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-12 font-poppins tracking-tight">Excellence through Education</h2>
 
             <div className="relative p-8 lg:p-12 border-t-2 border-amber-100 bg-slate-50/30 rounded-b-3xl">
-              <p className="text-2xl lg:text-3xl text-slate-700 leading-relaxed font-medium font-poppins italic max-w-4xl mx-auto">
-                "We strive for educational, social, cultural, and economic advancement,
-                where modern education blends with traditional instruction in perfect harmony."
-              </p>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="text-left">
+                  <h3 className="text-amber-600 font-bold uppercase tracking-widest text-xs mb-3">Our Vision</h3>
+                  <p className="text-2xl text-slate-700 leading-relaxed font-medium font-poppins">
+                    "Excellence through holistic education for whatever professional path the students choose."
+                  </p>
+                </div>
+                <div className="text-left md:border-l md:border-amber-100 md:pl-8">
+                  <h3 className="text-amber-600 font-bold uppercase tracking-widest text-xs mb-3">Our Mission</h3>
+                  <p className="text-2xl text-slate-700 leading-relaxed font-medium font-poppins">
+                    "To nurse and nurture creativity in the minds of our students and discover their manifold potentialities."
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -104,7 +116,7 @@ export default function AboutPage() {
                 <h2 className="text-4xl lg:text-7xl font-bold text-slate-900 leading-tight font-poppins mb-8">Our Foundation Story</h2>
                 <div className="h-1.5 w-24 bg-amber-500 rounded-full mb-8"></div>
                 <p className="text-slate-700 text-xl leading-relaxed font-medium">
-                  Established in 1996, the school represents a world where modern education blends with traditional instruction in orchestral harmony.
+                  Established in 1996, Vadi Husna Public School represents a world where modern education blends with traditional instruction in orchestral harmony.
                 </p>
               </div>
 
@@ -114,10 +126,13 @@ export default function AboutPage() {
                     <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-900">
                       <History size={20} />
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900 font-poppins">A Visionary Beginning</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 font-poppins">Origin & Development</h3>
                   </div>
                   <p className="text-slate-600 leading-relaxed text-lg font-medium mb-6">
-                    Headed by <span className="text-slate-900 font-bold border-b-2 border-amber-200">Mr. K. Abdul Khadar</span>, the founder General Secretary, our institution was built on the core objective of striving for region-wide educational advancement.
+                    Staying rooted to the philosophical foundations of education and having objectives to strive for educational, social, cultural and economic advancement in and around Elettil, a team of dedicated young men headed by <span className="text-slate-900 font-bold border-b-2 border-amber-200">Mr. K. Abdul Khadar</span>, the founder General Secretary of Vadi Husna, established Vadi Husna Public School in 1996.
+                  </p>
+                  <p className="text-slate-600 leading-relaxed text-lg font-medium mb-6">
+                    Ever since its inception, the school has set itself a benchmark in academic excellence, integrity, social and moral responsibility so as to enable the pupils to face the world of stiff competitions and tough challenges.
                   </p>
                 </div>
 
@@ -125,19 +140,21 @@ export default function AboutPage() {
                   <div className="reveal reveal-up">
                     <div className="flex items-center gap-3 mb-4">
                       <Target className="text-amber-500" size={24} />
-                      <h4 className="text-lg font-bold text-slate-900 font-poppins">Philosophy</h4>
+                      <h4 className="text-lg font-bold text-slate-900 font-poppins">Motto</h4>
                     </div>
                     <p className="text-slate-500 text-sm leading-relaxed font-medium">
-                      Education as the continuous pursuit of excellence. Our institutional ethos drives every student toward their potential.
+                      Excellence through education. Education as the continuous pursuit of excellence.
                     </p>
                   </div>
                   <div className="reveal reveal-up" style={{ transitionDelay: '100ms' }}>
-                    <Globe className="text-amber-500" size={24} />
-                    <h4 className="text-lg font-bold text-slate-900 font-poppins">Campus</h4>
+                    <div className="flex items-center gap-3 mb-4">
+                      <Globe className="text-amber-500" size={24} />
+                      <h4 className="text-lg font-bold text-slate-900 font-poppins">Location</h4>
+                    </div>
+                    <p className="text-slate-500 text-sm leading-relaxed font-medium">
+                      Situated in a spacious campus blessed with comfortable scenic surroundings and easy accessibility, within walking distance from Elettil town on Koduvally road.
+                    </p>
                   </div>
-                  <p className="text-slate-500 text-sm leading-relaxed font-medium -mt-6">
-                    situated in a spacious, scenic environment near Elettil town, providing the perfect atmosphere for focused learning.
-                  </p>
                 </div>
 
                 <div className="card-clean p-10 bg-slate-50 border-none rounded-3xl reveal reveal-up">

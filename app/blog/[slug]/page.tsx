@@ -2,6 +2,22 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Calendar, Share2, PlayCircle, Clock } from "lucide-react";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: NewsDetailPageProps): Promise<Metadata> {
+  const newsItem = newsDetails[params.slug];
+  if (!newsItem) return { title: "Article Not Found" };
+
+  return {
+    title: newsItem.title,
+    description: newsItem.description.slice(0, 160).trim() + "...",
+    openGraph: {
+      title: newsItem.title,
+      description: newsItem.description.slice(0, 160).trim() + "...",
+      images: [newsItem.image],
+    },
+  };
+}
 
 interface NewsItem {
   title: string;

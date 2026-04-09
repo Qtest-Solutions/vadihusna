@@ -18,23 +18,51 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Vadi Husna Public School - Excellence through Education",
+  title: {
+    default: "Vadi Husna Public School | Excellence through Education",
+    template: "%s | Vadi Husna Public School",
+  },
   description:
     "CBSE affiliated school in Kozhikode, Kerala. Founded 1996. Quality education from LKG to XII with holistic development and character building.",
-  keywords:
-    "VHPS, Vadi Husna Public School, CBSE school Kozhikode, Kerala education, English medium school",
+  keywords: [
+    "Vadi Husna Public School",
+    "VHPS Elettil",
+    "CBSE School Kozhikode",
+    "Best School in Kerala",
+    "English Medium School Elettil",
+    "Quality Education Kozhikode",
+  ],
   authors: [{ name: "Vadi Husna Public School" }],
+  creator: "Vadi Husna Public School",
+  publisher: "Vadi Husna Public School",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
-    title: "Vadi Husna Public School - Excellence through Education",
+    title: "Vadi Husna Public School | Excellence through Education",
     description:
-      "CBSE affiliated school in Kozhikode, Kerala offering quality education from LKG to XII",
-    type: "website",
+      "CBSE affiliated school in Kozhikode, Kerala offering quality education from LKG to XII with holistic development.",
     url: "https://www.vadihusnaschool.com",
+    siteName: "Vadi Husna Public School",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vadi Husna Public School | Excellence through Education",
+    description:
+      "CBSE affiliated school in Kozhikode, Kerala offering quality education from LKG to XII.",
   },
   icons: {
-    icon: "/vadihusnaLogo.png",
-    // you can also specify other icon sizes or apple touch
-    // apple: "/vadihusnaLogo.png",
+    icon: [
+      { url: "/favicon.png" },
+      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/favicon.png" },
+    ],
   },
 };
 

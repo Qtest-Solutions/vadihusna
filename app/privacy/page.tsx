@@ -1,4 +1,12 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: "Privacy Policy for Vadi Husna Public School. We are committed to protecting the privacy of our students, staff, and visitors.",
+};
+
 export default function PrivacyPage() {
+
   return (
     <section className="section-padding">
       <div className="container-max">

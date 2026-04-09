@@ -1,4 +1,12 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Campus Facilities",
+  description: "Discover the state-of-the-art infrastructure at Vadi Husna Public School. From science labs and computer facilities to our massive auditorium and school mess.",
+};
+
 export default function FacilitiesPage() {
+
   const facilities = [
     {
       title: "Library & Reading Room",
@@ -15,6 +23,18 @@ export default function FacilitiesPage() {
     {
       title: "Sports Facilities",
       desc: "Expansive playgrounds and equipment for holistic physical development."
+    },
+    {
+      title: "Auditorium",
+      desc: "A spacious venue with a capacity of 800 students for events and gatherings."
+    },
+    {
+      title: "School Mess",
+      desc: "Dedicated catering facility providing nutritious meals for staff and students."
+    },
+    {
+      title: "Transport Facility",
+      desc: "Safe and reliable bus service covering all major routes with distance-based fares."
     },
   ];
 
