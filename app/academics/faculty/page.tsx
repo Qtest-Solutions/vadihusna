@@ -60,9 +60,9 @@ const facultyData = [
 
 const getDesignationBadge = (designation: string) => {
   if (designation === "PRINCIPAL") return <span className="badge badge-accent shadow-sm">PRINCIPAL</span>;
-  if (designation === "PGT" || designation === "TGT" || designation === "PRT") 
+  if (designation === "PGT" || designation === "TGT" || designation === "PRT")
     return <span className="badge badge-primary shadow-sm">{designation}</span>;
-  if (designation === "PET" || designation === "Librarian" || designation === "COUNSELLOR") 
+  if (designation === "PET" || designation === "Librarian" || designation === "COUNSELLOR")
     return <span className="badge badge-teal shadow-sm">{designation}</span>;
   return <span className="badge badge-primary shadow-sm">{designation}</span>;
 };
@@ -71,7 +71,7 @@ export default function FacultyPage() {
   return (
     <main className="bg-slate-50/50 min-h-screen">
       {/* Hero */}
-      <section className="page-hero !py-32">
+      <section className="page-hero !py-32 h-[550px]">
         <div className="container-max text-center relative z-10">
           <p className="text-amber-400 font-bold tracking-widest text-xs uppercase mb-3">Vadi Husna Public School</p>
           <h1 className="heading-primary text-white !mb-4">Internal Faculty</h1>
@@ -82,7 +82,7 @@ export default function FacultyPage() {
       </section>
 
       <div className="container-max py-16 lg:py-24">
-        
+
         {/* Excellence Note */}
         <div className="card-clean p-8 lg:p-12 mb-20 text-center border-t-4 border-amber-500 reveal reveal-up shadow-xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-amber-50 rounded-bl-full -z-0 opacity-40" />
@@ -118,7 +118,7 @@ export default function FacultyPage() {
             <h2 className="text-3xl font-bold text-slate-900 tracking-tight font-poppins">Faculty Directory</h2>
             <p className="text-slate-500 text-sm font-medium mt-1">Academic Year 2024-25 • Primary & Secondary Staff</p>
           </div>
-          
+
           <div className="flex flex-wrap justify-center gap-3">
             <span className="flex items-center gap-2 text-[11px] font-bold text-slate-500 uppercase tracking-tighter bg-white px-3 py-1.5 rounded-full border border-slate-100"><span className="w-2 h-2 rounded-full bg-amber-500"></span> Principal</span>
             <span className="flex items-center gap-2 text-[11px] font-bold text-slate-500 uppercase tracking-tighter bg-white px-3 py-1.5 rounded-full border border-slate-100"><span className="w-2 h-2 rounded-full bg-slate-900"></span> Academic</span>
@@ -160,7 +160,7 @@ export default function FacultyPage() {
                     <span className="text-slate-900 text-[13px] font-bold">{faculty.experience} Experience</span>
                   </div>
                 </div>
-                
+
                 <div className="pt-4 border-t border-slate-50 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Profile #0{faculty.sl}</span>
                   <ArrowUpRight size={16} className="text-amber-500" />

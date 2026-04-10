@@ -182,7 +182,7 @@
   /* Page hero — Cinematic full-width */
   .page-hero {
     @apply relative py-32 lg:py-48 px-4 sm:px-6 lg:px-8 text-white flex items-center justify-center overflow-hidden;
-    background-image: url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?q=80&w=2069&auto=format&fit=crop');
+    background-image: url('/vadihusna_hero.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

@@ -8,9 +8,9 @@ export default function HeroSection() {
       {/* Note: I'm using an external high-quality placeholder that looks like a school/campus since local assets aren't specified for this layout yet */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?q=80&w=2069&auto=format&fit=crop"
+          src="/vadihusna_hero.jpg"
           alt="Vadi Husna Public School Campus"
-          className="hero-kenburns"
+          className="hero-kenburns object-cover w-full h-full"
         />
         {/* Deep Sapphire Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900/90 z-10" />
@@ -29,7 +29,7 @@ export default function HeroSection() {
         </div> */}
 
         {/* Cinematic Headline */}
-        <div className="reveal reveal-up visible" style={{ transitionDelay: '100ms' }}>
+        <div className="reveal reveal-up visible mt-8" style={{ transitionDelay: '100ms' }}>
           <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 mt-11 leading-tight drop-shadow-xl" style={{ fontFamily: 'var(--font-poppins)' }}>
             Excellence Through <br className="hidden sm:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
@@ -40,7 +40,7 @@ export default function HeroSection() {
 
         {/* Subtitle */}
         <div className="reveal reveal-up visible" style={{ transitionDelay: '200ms' }}>
-          <p className="text-slate-200 text-lg md:text-2xl font-medium max-w-3xl mx-auto mb-6 leading-relaxed drop-shadow-md">
+          <p className="text-slate-200 text-lg md:text-1xl font-medium max-w-2xl mx-auto mb-6 leading-relaxed drop-shadow-md">
             Empowering students with modern knowledge while staying rooted in traditional values. Join us on a journey of holistic development.
           </p>
         </div>
