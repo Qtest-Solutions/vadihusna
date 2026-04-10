@@ -88,9 +88,8 @@ const AdminSidebar: React.FC<AdminSidebarProps> = ({
 
   return (
     <div
-      className={`${
-        sidebarOpen ? "w-64" : "w-16"
-      } bg-white shadow-lg transition-all duration-300 flex flex-col`}
+      className={`${sidebarOpen ? "w-64" : "w-16"
+        } bg-white shadow-lg transition-all duration-300 flex flex-col`}
     >
       {/* Logo and Toggle */}
       <div className="p-4 border-b flex items-center justify-between">
@@ -125,16 +124,14 @@ const AdminSidebar: React.FC<AdminSidebarProps> = ({
             <button
               key={item.id}
               onClick={() => handleMenuClick(item.id)}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-colors ${
-                isActive
-                  ? "bg-blue-50 text-blue-700 border border-blue-200"
-                  : "text-gray-700 hover:bg-gray-50"
-              }`}
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-colors ${isActive
+                ? "bg-blue-50 text-blue-700 border border-blue-200"
+                : "text-gray-700 hover:bg-gray-50"
+                }`}
             >
               <Icon
-                className={`h-5 w-5 ${
-                  isActive ? "text-blue-700" : "text-gray-500"
-                }`}
+                className={`h-5 w-5 ${isActive ? "text-blue-700" : "text-gray-500"
+                  }`}
               />
               {sidebarOpen && <span className="font-medium">{item.label}</span>}
             </button>
@@ -146,9 +143,8 @@ const AdminSidebar: React.FC<AdminSidebarProps> = ({
       {currentUser && (
         <div className="p-4 border-t">
           <div
-            className={`flex items-center gap-3 ${
-              !sidebarOpen && "justify-center"
-            }`}
+            className={`flex items-center gap-3 ${!sidebarOpen && "justify-center"
+              }`}
           >
             <div className="h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-semibold">
               {getUserInitials(currentUser)}

@@ -7,9 +7,9 @@ export const metadata: Metadata = {
 
 import Link from "next/link";
 
-import { 
-  BookOpen, 
-  GraduationCap, 
+import {
+  BookOpen,
+  GraduationCap,
   Users,
   ChevronRight
 } from "lucide-react";
@@ -45,7 +45,7 @@ export default function AcademicsPage() {
   return (
     <div>
       {/* HEADER HERO */}
-      <section className="page-hero !py-32 !lg:py-48">
+      <section className="page-hero !py-32 !lg:py-48 ">
         <div className="container-max text-center">
           <p className="text-amber-400 font-bold tracking-widest text-sm uppercase mb-3 text-white">Vadi Husna Public School</p>
           <h1 className="heading-primary text-white !mb-4">Academic Pathways</h1>
@@ -58,32 +58,32 @@ export default function AcademicsPage() {
       <div className="container-max py-24">
         <div className="grid lg:grid-cols-3 gap-8">
           {pathways.map((path, i) => (
-            <Link 
-              key={i} 
+            <Link
+              key={i}
               href={path.href}
               className="group relative h-[500px] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
             >
               {/* Background Image */}
-              <img 
-                src={path.image} 
+              <img
+                src={path.image}
                 alt={path.title}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              
+
               {/* Overlays */}
               <div className={`absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-90 transition-opacity group-hover:opacity-100`} />
-              
+
               {/* Content */}
               <div className="absolute inset-0 p-10 flex flex-col justify-end text-white">
                 <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${path.color} flex items-center justify-center mb-6 shadow-lg transform group-hover:-translate-y-2 transition-transform duration-500`}>
                   <path.icon size={28} />
                 </div>
-                
+
                 <h3 className="text-3xl font-bold mb-4 font-poppins">{path.title}</h3>
                 <p className="text-stone-300 leading-relaxed mb-6 line-clamp-3 group-hover:text-white transition-colors">
                   {path.desc}
                 </p>
-                
+
                 <div className="flex items-center gap-2 font-bold text-sm tracking-wider uppercase group-hover:gap-4 transition-all">
                   Explore Now <ChevronRight size={18} className="text-amber-400" />
                 </div>

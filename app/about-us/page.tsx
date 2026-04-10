@@ -129,7 +129,7 @@ export default function AboutPage() {
                     <h3 className="text-2xl font-bold text-slate-900 font-poppins">Origin & Development</h3>
                   </div>
                   <p className="text-slate-600 leading-relaxed text-lg font-medium mb-6">
-                    Staying rooted to the philosophical foundations of education and having objectives to strive for educational, social, cultural and economic advancement in and around Elettil, a team of dedicated young men headed by <span className="text-slate-900 font-bold border-b-2 border-amber-200">Mr. K. Abdul Khadar</span>, the founder General Secretary of Vadi Husna, established Vadi Husna Public School in 1996.
+                    Staying rooted to the philosophical foundations of education and having objectives to strive for educational, social, cultural and economic advancement in and around Elettil, a dedicated team established Vadi Husna Public School in 1996.
                   </p>
                   <p className="text-slate-600 leading-relaxed text-lg font-medium mb-6">
                     Ever since its inception, the school has set itself a benchmark in academic excellence, integrity, social and moral responsibility so as to enable the pupils to face the world of stiff competitions and tough challenges.

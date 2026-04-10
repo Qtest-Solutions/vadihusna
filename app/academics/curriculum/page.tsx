@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { 
-  Lightbulb, 
-  BookOpen, 
-  GraduationCap, 
-  Building2, 
-  MoonStar, 
+import {
+  Lightbulb,
+  BookOpen,
+  GraduationCap,
+  Building2,
+  MoonStar,
   Clock,
   CheckCircle2,
   Globe,
@@ -13,11 +13,11 @@ import {
   Sparkles
 } from "lucide-react";
 
-export default function CurriculumPage() {
+export default function Page() {
   return (
     <div>
       {/* HEADER HERO */}
-      <section className="page-hero !py-32 !lg:py-40">
+      <section className="page-hero !py-32 !lg:py-40 h-[550px]">
         <div className="container-max text-center">
           <p className="text-amber-400 font-bold tracking-widest text-sm uppercase mb-3 text-white">Vadi Husna Public School</p>
           <h1 className="heading-primary text-white !mb-4">School Curriculum</h1>
@@ -28,7 +28,7 @@ export default function CurriculumPage() {
       </section>
 
       <div className="container-max py-20 lg:py-24">
-        
+
         {/* CURRICULUM SECTION */}
         <div className="mb-32">
           <div className="max-w-4xl mx-auto text-center mb-12">
